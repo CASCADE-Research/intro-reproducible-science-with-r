@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/index.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/index.html</loc>
     <lastmod>2026-09-03T20:24:05.234Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/what-is-reproducible-science.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/what-is-reproducible-science.html</loc>
     <lastmod>2026-09-03T20:16:33.927Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/reproducible-science-tools-platforms.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/reproducible-science-tools-platforms.html</loc>
     <lastmod>2026-09-03T20:16:33.927Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/r-primer-syntax-and-basic-functions.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/r-primer-syntax-and-basic-functions.html</loc>
     <lastmod>2026-09-03T20:16:33.928Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/anatomy-of-an-r-project.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/anatomy-of-an-r-project.html</loc>
     <lastmod>2026-09-03T20:16:33.928Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/working-with-dates.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/working-with-dates.html</loc>
     <lastmod>2026-09-03T20:16:33.928Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/data-wrangling-special-considerations-with-survey-data.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/data-wrangling-special-considerations-with-survey-data.html</loc>
     <lastmod>2026-09-03T20:16:33.928Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/data-wrangling-and-visualization-of-big-data.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/data-wrangling-and-visualization-of-big-data.html</loc>
     <lastmod>2026-09-03T20:16:33.929Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/working-with-text-data.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/working-with-text-data.html</loc>
     <lastmod>2026-09-03T20:16:33.929Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/working-with-json-data.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/working-with-json-data.html</loc>
     <lastmod>2026-09-03T20:16:33.929Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/working-with-apis.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/working-with-apis.html</loc>
     <lastmod>2026-09-03T20:16:33.930Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/regression-and-multilevel-modeling.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/regression-and-multilevel-modeling.html</loc>
     <lastmod>2026-09-03T20:16:33.930Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/resources.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/resources.html</loc>
     <lastmod>2026-09-03T20:16:33.930Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/workshops.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/workshops.html</loc>
     <lastmod>2026-09-03T20:16:33.930Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/recordings.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/recordings.html</loc>
     <lastmod>2026-09-03T20:16:33.931Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/closing-acknowledgements.html</loc>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/closing-acknowledgements.html</loc>
     <lastmod>2026-09-03T20:30:46.388Z</lastmod>
   </url>
   <url>
-    <loc>https://nelsonroque.github.io/contextlab_introdatascience_webcourse/reproducible-data-science.pdf</loc>
-    <lastmod>2026-09-03T20:37:05.538Z</lastmod>
+    <loc>https://cascade-research.github.io/intro-reproducible-science-with-r/reproducible-data-science.pdf</loc>
+    <lastmod>2026-09-03T20:44:09.156Z</lastmod>
   </url>
 </urlset>

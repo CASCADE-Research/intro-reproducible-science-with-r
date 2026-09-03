@@ -65,3 +65,9 @@ The production build includes the complete PDF book at
 `docs/reproducible-data-science.pdf`. Pushes to `main` trigger the GitHub Actions
 workflow in `.github/workflows/publish.yml`, which renders and deploys the
 `docs/` artifact through GitHub Pages.
+
+### First-time GitHub Pages setup
+
+In the GitHub repository, open **Settings → Pages** and set **Build and
+deployment → Source** to **GitHub Actions**. This one-time administrative step
+must be completed before the deployment workflow can publish the site.

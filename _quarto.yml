@@ -18,8 +18,8 @@ book:
       affiliation: "Context Lab · University of Central Florida"
       email: nelson.roque@ucf.edu
   favicon: img/contextlab-mark.svg
-  site-url: https://nelsonroque.github.io/contextlab_introdatascience_webcourse/
-  repo-url: https://github.com/nelsonroque/contextlab_introdatascience_webcourse
+  site-url: https://cascade-research.github.io/intro-reproducible-science-with-r/
+  repo-url: https://github.com/CASCADE-Research/intro-reproducible-science-with-r
   repo-actions: [edit, issue]
   page-navigation: true
   search:

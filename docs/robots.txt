@@ -1,1 +1,1 @@
-Sitemap: https://nelsonroque.github.io/contextlab_introdatascience_webcourse/sitemap.xml
+Sitemap: https://cascade-research.github.io/intro-reproducible-science-with-r/sitemap.xml

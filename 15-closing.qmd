@@ -17,8 +17,8 @@ I want to thank a number of people who made this possible:
   - Dr. Florian Jentsch
   - [Dr. Cary Stothart](https://carystothart.com/)
   - Dr. Justin Mason
-  - Context Lab students
+  - Context Lab and CASCADE Lab students
 
 ## Questions, Comments, Feedback?
 
-Feel free to email me at [nelson.roque@ucf.edu](mailto:nelson.roque@ucf.edu) if you have any questions, comments, or feedback.
+Feel free to email me at [nur375@psu.edu](mailto:nur375@psu.edu) if you have any questions, comments, or feedback.

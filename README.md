@@ -2,9 +2,9 @@
 
 ***Author:*** Nelson Roque, PhD
 
-[nelson.roque@ucf.edu](mailto:nelson.roque@ucf.edu)
+[nur375@psu.edu](mailto:nur375@psu.edu)
 
-Director of the Context Lab at University of Central Florida
+Director of the CASCADE Lab at The Pennsylvania State University
 
 ## Intention of this Web Course
 

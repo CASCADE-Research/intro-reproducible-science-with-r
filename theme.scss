@@ -11,8 +11,8 @@ $font-family-sans-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI
 $font-family-monospace: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 $headings-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 $headings-font-weight: 750;
-$border-radius: .75rem;
-$border-radius-lg: 1.1rem;
+$border-radius: .35rem;
+$border-radius-lg: .5rem;
 $code-bg: #f1effb;
 $code-color: #4437bc;
 $code-block-bg: #f5f3f0;
@@ -30,5 +30,5 @@ $navbar-fg: #27243a;
   --course-surface: #ffffff;
   --course-surface-soft: #f4f1ff;
   --course-border: #e3dfeb;
-  --course-shadow: 0 16px 45px rgba(53, 46, 99, .10);
+  --course-shadow: 0 5px 16px rgba(53, 46, 99, .07);
 }

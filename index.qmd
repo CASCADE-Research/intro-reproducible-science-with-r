@@ -11,7 +11,7 @@ format:
 ::: {.hero}
 ::: {.content-visible when-format="html"}
 <div class="hero-copy">
-<p class="eyebrow">An open Context Lab course</p>
+<p class="eyebrow">An open CASCADE Lab course</p>
 
 # Make your research easier to trust.
 
@@ -95,6 +95,6 @@ You can read the lessons without installing anything. To run the examples, clone
 
 ## About the course
 
-This open course was created by **Nelson Roque, PhD**, Director of the Context Lab at the University of Central Florida. It is designed to give the next generation of scientists a more confident start with reproducible, code-based research.
+This open course was created by **Nelson Roque, PhD**, Director of the CASCADE Lab at The Pennsylvania State University. It is designed to give the next generation of scientists a more confident start with reproducible, code-based research.
 
-[Visit the Context Lab](https://sciences.ucf.edu/psychology/contextlab/){.course-button}
+[Visit the CASCADE Lab](https://thecascadelab.com/){.course-button}

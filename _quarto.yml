@@ -15,8 +15,8 @@ book:
   downloads: [pdf]
   author:
     - name: "Nelson Roque, PhD"
-      affiliation: "Context Lab · University of Central Florida"
-      email: nelson.roque@ucf.edu
+      affiliation: "CASCADE Lab · The Pennsylvania State University"
+      email: nur375@psu.edu
   favicon: img/contextlab-mark.svg
   site-url: https://cascade-research.github.io/intro-reproducible-science-with-r/
   repo-url: https://github.com/CASCADE-Research/intro-reproducible-science-with-r
@@ -31,7 +31,7 @@ book:
   navbar:
     pinned: true
     logo: img/contextlab-mark.svg
-    logo-alt: "Context Lab course home"
+    logo-alt: "CASCADE Lab course home"
     title: "Reproducible Data Science"
     right:
       - text: "Start learning"

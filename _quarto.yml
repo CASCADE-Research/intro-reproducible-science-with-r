@@ -61,9 +61,7 @@ book:
     - part: "04 · Keep learning"
       chapters:
         - 12-resources.qmd
-        - 13-events.qmd
-        - 14-recordings.qmd
-        - 15-closing.qmd
+        - 13-closing.qmd
   page-footer:
     left: "© 2026 Nelson Roque · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
     right: "Built with [Quarto](https://quarto.org/)"

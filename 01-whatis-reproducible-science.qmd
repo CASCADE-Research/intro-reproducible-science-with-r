@@ -1,0 +1,48 @@
+---
+output-file: what-is-reproducible-science
+---
+
+# What is reproducible science?
+
+## Activity: Thought Exercise
+
+- What does reproducible science mean to you?
+- Which tools have you previously used?
+- Which tools are you most excited to learn?
+
+## What is reproducible science?
+
+Making entire scientific process transparent (when and as allowable by law, grants).
+
+  - Sharing experiment and analysis code
+  - Detailed methods sections
+  - Sharing stimulus sets
+  - Being able to walk through a data analysis start (load raw data) to finish (manuscript analyses) in code
+  - Following FAIR Principles
+  - Pre-registering hypotheses and analysis plans (e.g., on OSF)
+
+### Benefits of Reproducible Research
+
+Sourced from: [https://www.displayr.com/what-is-reproducible-research](https://www.displayr.com/what-is-reproducible-research 
+)
+
+  - increased likelihood that the research will be correct
+  - reproducibility makes it easier to check the research
+  - it is easier to reproduce the research independently
+  - easier to extend the research
+  - reusable code and instruction resulting in increased efficiencies
+  
+### Reproducible vs Replicable
+
+  - Reproducible: when the exact results can be reproduced if given access to the original data, software, or code
+  - Replicable: research results can be reproduced by independent researchers using different methods.
+
+## FAIR Principles
+
+  - ***F: Findable***: "The first step in (re)using data is to find them. Metadata and data should be easy to find for both humans and computers. Machine-readable metadata are essential for automatic discovery of datasets and services"
+  - ***A: Accessible***: "Once the user finds the required data, she/he/they need to know how they can be accessed, possibly including authentication and authorisation."
+  - ***I: Interoperable***: "The data usually need to be integrated with other data. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing."
+  - ***R: Reusable***: "The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings."
+
+  - [Learn more about the FAIR Principles](https://www.go-fair.org/fair-principles/)
+  - [FAIR Principles Info PDF](https://www.go-fair.org/wp-content/uploads/2022/01/FAIRPrinciples_overview.pdf)

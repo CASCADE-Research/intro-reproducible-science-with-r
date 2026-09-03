@@ -1,0 +1,1269 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "What you will learn\nBy the end of the course, you will be able to:",
+    "crumbs": [
+      "Start learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-you-will-learn",
+    "href": "index.html#what-you-will-learn",
+    "title": "Home",
+    "section": "",
+    "text": "explain why reproducibility matters and apply the FAIR principles;\norganize research as a durable, code-based workflow;\nimport, inspect, reshape, join, and visualize real-world data;\nwork with dates, survey exports, text, JSON, and public APIs; and\nmove from exploratory analysis toward regression and multilevel models.",
+    "crumbs": [
+      "Start learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-map",
+    "href": "index.html#course-map",
+    "title": "Home",
+    "section": "Course map",
+    "text": "Course map\nChoose a module or follow the course in order. Each lesson includes focused explanations and code you can adapt to your own work.\n\n Stage 01 · Foundations\n\nWhy reproducibility?\n\n\nBuild the mental model: reproducibility, replication, FAIR principles, and the tools that support open science.\n\nBegin with the why → \n Stage 02 · Working in R\n\nBuild a dependable workflow\n\n\nLearn R syntax, file operations, project anatomy, and the date-handling patterns that appear in everyday research.\n\nLearn the workflow → \n Stage 03 · Wrangling & analysis\n\nTurn messy data into evidence\n\n\nPractice with surveys, large datasets, text, JSON, APIs, visualization, regression, and multilevel models.\n\nWork with data → \n Stage 04 · Keep learning\n\nContinue beyond the course\n\n\nUse the curated resources, workshop materials, and recordings to deepen your practice.\n\nBrowse resources →",
+    "crumbs": [
+      "Start learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#a-suggested-learning-path",
+    "href": "index.html#a-suggested-learning-path",
+    "title": "Home",
+    "section": "A suggested learning path",
+    "text": "A suggested learning path\n\n\nUnderstand the standard.Start with reproducibility and the FAIR principles.\n\n\nSet up the workflow.Learn the tools, R foundations, and project structure.\n\n\nPractice on varied data.Move through survey, time-series, text, JSON, and API examples.\n\n\nAnalyze and communicate.Build models, create production-ready outputs, and document your decisions.\n\n\n\n\n\n\n\n\nTipHow to use this course\n\n\n\nYou can read the lessons without installing anything. To run the examples, clone the repository, open the R project, and work through the chapters in order. Use the search button or press / whenever you need to find a topic quickly.",
+    "crumbs": [
+      "Start learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-course",
+    "href": "index.html#about-the-course",
+    "title": "Home",
+    "section": "About the course",
+    "text": "About the course\nThis open course was created by Nelson Roque, PhD, Director of the Context Lab at the University of Central Florida. It is designed to give the next generation of scientists a more confident start with reproducible, code-based research.\nVisit the Context Lab",
+    "crumbs": [
+      "Start learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-reproducible-science.html",
+    "href": "what-is-reproducible-science.html",
+    "title": "What is reproducible science?",
+    "section": "",
+    "text": "Activity: Thought Exercise",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is reproducible science?</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-reproducible-science.html#activity-thought-exercise",
+    "href": "what-is-reproducible-science.html#activity-thought-exercise",
+    "title": "What is reproducible science?",
+    "section": "",
+    "text": "What does reproducible science mean to you?\nWhich tools have you previously used?\nWhich tools are you most excited to learn?",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is reproducible science?</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-reproducible-science.html#what-is-reproducible-science",
+    "href": "what-is-reproducible-science.html#what-is-reproducible-science",
+    "title": "What is reproducible science?",
+    "section": "What is reproducible science?",
+    "text": "What is reproducible science?\nMaking entire scientific process transparent (when and as allowable by law, grants).\n\nSharing experiment and analysis code\nDetailed methods sections\nSharing stimulus sets\nBeing able to walk through a data analysis start (load raw data) to finish (manuscript analyses) in code\nFollowing FAIR Principles\nPre-registering hypotheses and analysis plans (e.g., on OSF)\n\n\nBenefits of Reproducible Research\nSourced from: https://www.displayr.com/what-is-reproducible-research\n\nincreased likelihood that the research will be correct\nreproducibility makes it easier to check the research\nit is easier to reproduce the research independently\neasier to extend the research\nreusable code and instruction resulting in increased efficiencies\n\n\n\nReproducible vs Replicable\n\nReproducible: when the exact results can be reproduced if given access to the original data, software, or code\nReplicable: research results can be reproduced by independent researchers using different methods.",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is reproducible science?</span>"
+    ]
+  },
+  {
+    "objectID": "what-is-reproducible-science.html#fair-principles",
+    "href": "what-is-reproducible-science.html#fair-principles",
+    "title": "What is reproducible science?",
+    "section": "FAIR Principles",
+    "text": "FAIR Principles\n\nF: Findable: “The first step in (re)using data is to find them. Metadata and data should be easy to find for both humans and computers. Machine-readable metadata are essential for automatic discovery of datasets and services”\nA: Accessible: “Once the user finds the required data, she/he/they need to know how they can be accessed, possibly including authentication and authorisation.”\nI: Interoperable: “The data usually need to be integrated with other data. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.”\nR: Reusable: “The ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings.”\nLearn more about the FAIR Principles\nFAIR Principles Info PDF",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is reproducible science?</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html",
+    "href": "reproducible-science-tools-platforms.html",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "",
+    "text": "Overview\nReproducible Science is supported by a large toolkit of software. Below is a highlight of a few important tools that meet most data needs.",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html#reproducible-science-tools-platforms",
+    "href": "reproducible-science-tools-platforms.html#reproducible-science-tools-platforms",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "Reproducible Science Tools & Platforms",
+    "text": "Reproducible Science Tools & Platforms\n\nR\nLaTeX\nMarkdown\nPython, Anaconda\nGitHub, GitHub Pages\nDocker\nVMs (e.g., VirtualBox)\nInfrastructure as Code (IaC; e.g., AWS CDK)\nIDEs (e.g., Visual Studio Code)\nPre-Registration (e.g., Open Science Framework)\nDocumentation (e.g., Docusaurus)",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html#what-is-github",
+    "href": "reproducible-science-tools-platforms.html#what-is-github",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\nA platform to store and collaborate on code.\nGet GitHub Desktop\nGet GitHub cheatsheets\n\nGitHub concepts\n\nRepository: a logical unit of storage for maintaining code/other assets. Can contain many folders, files.\n.gitignore: a dotfile that specifies which files should not be pushed to GitHub\n.gitkeep: a file (with dot prefix) to specify that a folder should be kept if blank as part of the project structure. This is helpful when creating templates.\ncommit: create a record/snapshot of all files (or specific files) at a moment in time. You may tag collaborators, add a title and notes.\npush: ‘storing’ the result of prior commits\npull: ‘extracting’ the result of prior commits\ndiff: difference (line-specific) between two commits. Helpful when trying to remember when and where code edits where made.",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html#what-is-markdown",
+    "href": "reproducible-science-tools-platforms.html#what-is-markdown",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "What is Markdown?",
+    "text": "What is Markdown?\nLightweight markup used to add formatting elements to plaintext documents.\nCreated by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.\n\nUsing Markdown is different than using a WYSIWYG editor.\nIn Word, you click buttons in GUI to apply formatting\nIn Markdown, you add syntax to text to apply formatting\n\nFor more information, visit: https://www.markdownguide.org/getting-started/",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html#what-is-r",
+    "href": "reproducible-science-tools-platforms.html#what-is-r",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "What is R?",
+    "text": "What is R?\nStatistical programming language (released ~1993). Similar to S (released ~1976).\nDownload R\n\nWhat is RStudio?\nIntegrated development environment (IDE) for R.\nDownload RStudio\n\n\nWhat is R Markdown?\nReproducible notebook (akin to Jupyter Notebooks in Python) where you can write a narrative using Markdown syntax and embed code/plots throughout.\nMarkdown is a simple formatting syntax for authoring HTML, PDF, MS Word and Powerpoint documents, websites and more. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nThis is an R Markdown-based book, using the bookdown package.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.\n\n\nWhat are R packages?\nThink of CRAN as an equivalent to iOS App Store, or Google Play Store; CRAN is where you download published R packages (directly from R, RStudio).\nA developer can also make packages available directly in source code, or via tools like GitHub, for example:\ninstall.packages(\"devtools\")\ndevtools::install_github(\"nelsonroque/ruf\")",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "reproducible-science-tools-platforms.html#what-is-endnote",
+    "href": "reproducible-science-tools-platforms.html#what-is-endnote",
+    "title": "Reproducible Science Tools & Platforms",
+    "section": "What is EndNote?",
+    "text": "What is EndNote?\nA citation manager. Especially useful for research projects with large amounts of citations.\nHere is a guide from the UCF library with installation links.\n\nWhy EndNote?\n\nno need for manual tracking (deleting, updating) of references\nchange citation format at click of a button\ncapture PDFs for any citations at click of a button\n\n\n\nEndNote downloads\n\nMac\nWindows",
+    "crumbs": [
+      "Start learning",
+      "01 · Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Reproducible Science Tools & Platforms</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html",
+    "href": "r-primer-syntax-and-basic-functions.html",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "",
+    "text": "Overview of Approach\nThis tutorial is written as a guide for the question,“how do I do X in R?”",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#installing-packages",
+    "href": "r-primer-syntax-and-basic-functions.html#installing-packages",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Installing packages",
+    "text": "Installing packages\n# install packages from CRAN ----\ninstall.packages(c(\"tidyverse\", \"devtools\"))\n\nAside: Some of my favorite packages\nInstall them all in one go with the code below:\ninstall.packages(c(\"tidyverse\", \"devtools\", \"qualtRics\",\n                   \"tidytext\", \"textdata\", \"topicmodels\",\n                   \"wordcloud\", \"ggwordcloud\", \"lme4\", \"sjPlot\",\n                   \"janitor\", \"esquisse\", \"rio\",\n                   \"cowplot\", \"stringi\", \"digest\"))\n\n# load libraries ----\nlibrary(tidyverse)\nset.seed(1013) # for reproducibility",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#assign-values-into-variables",
+    "href": "r-primer-syntax-and-basic-functions.html#assign-values-into-variables",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Assign values into variables",
+    "text": "Assign values into variables\nthis_is_double &lt;- 1\nthis_is_double2 = 1.0\nthis_is_logical &lt;- TRUE\nthis_is_date &lt;- as.Date(\"2020-10-13\")\nthis_is_list &lt;- list(x = rnorm(100), y = rnorm(10))\nthis_is_dataframe &lt;- data.frame(x = rnorm(100), y = rnorm(100))\nthis_is_tibble &lt;- tibble::tibble(x = rnorm(100), y = rnorm(100))\nthis_is_vector &lt;- c(1,2,3)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#check-underlying-types",
+    "href": "r-primer-syntax-and-basic-functions.html#check-underlying-types",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Check underlying types",
+    "text": "Check underlying types\nclass(this_is_double)\nclass(this_is_double2)\nclass(this_is_logical)\nclass(this_is_date)\nclass(this_is_list)\nclass(this_is_dataframe)\nclass(this_is_tibble)\nclass(this_is_vector)\n# generate a sequence ----\nseq_1_100 &lt;- seq(1, 100, by=1)\nseq_0_1 &lt;- seq(0, 1, by=0.1)\nseq_0_1\n\n# sample from vector of values -----\nlist_to_sample &lt;- c(\"A\", \"1\", \"2\", \"B\")\nsampled_value = sample(list_to_sample, size=1)\nsampled_value\nsampled_values_replace = sample(list_to_sample, size=10, replace=TRUE)\nsampled_values_replace",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#file-operations",
+    "href": "r-primer-syntax-and-basic-functions.html#file-operations",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "File operations",
+    "text": "File operations\n# list files\nall_csv_files = list.files(\"data\", \n                       pattern=\"*.csv\", \n                       recursive = T, \n                       full.names = T)\nall_csv_files\n\nall_files = list.files(\"data\", \n                       pattern=\"*\", \n                       recursive = T, \n                       full.names = T)\nall_files\n\n# check if directory exists\ndir.exists(\"data\")\n\n# create directory\ndir.create(\"test\")\n\n# create file if doesn't exist\nfile &lt;- \"test/dataframe.R\"\nif (file.exists(file)) {\n  cat(\"The file already exists\")\n} else {\n  file.create(file)\n  print(paste0(\"File created: \",file))\n}\n\n# remove directory\nunlink(\"test\", recursive=TRUE)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#reading-and-writing-files",
+    "href": "r-primer-syntax-and-basic-functions.html#reading-and-writing-files",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Reading and writing files",
+    "text": "Reading and writing files\nlibrary(readxl)\nlibrary(readr)\nlibrary(haven)\n\n# write files of\ndf_for_examples = tibble(x = rnorm(100), y = rnorm(100), study=\"demo_rnorm_in_r\")\n\nwrite_csv(df_for_examples, \"data/demo_fileread.csv\")\nwrite_delim(df_for_examples,\"data/demo_fileread.txt\",delim=\"\\t\")\nwrite_sav(df_for_examples, \"data/demo_fileread.sav\")\nwrite_sas(df_for_examples, \"data/demo_fileread.sas\")",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#export-multiple-dataframes-into-a-single-excel-workbook",
+    "href": "r-primer-syntax-and-basic-functions.html#export-multiple-dataframes-into-a-single-excel-workbook",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Export multiple dataframes into a single Excel workbook",
+    "text": "Export multiple dataframes into a single Excel workbook\nlibrary(rio)\ndf_1 = data.frame(x= rnorm(10), dataset=1)\ndf_2 = data.frame(x= rnorm(10), dataset=2)\ndf_3 = data.frame(x= rnorm(10), dataset=3)\n\nexport(format=\"xlsx\", file=\"OneExcelWorkbookWith3Sheet.xlsx\", x=list(df1=df_1, df2=df_2, df3=df_3))",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#sanitize-column-names",
+    "href": "r-primer-syntax-and-basic-functions.html#sanitize-column-names",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Sanitize column names",
+    "text": "Sanitize column names\nlibrary(janitor)\n\n# create demo data\ndf_janitor_before = tibble::tibble(`A long column Name with Mixed case`=rnorm(20),\n                    `COLUMN_NAME`=rnorm(20),\n                    `GROUP_$$`=rnorm(20))\nknitr::kable(df_janitor_before)\n\ndf_janitor_after = df_janitor_before %&gt;%\n  janitor::clean_names()\nknitr::kable(df_janitor_after)\n# load data ----\n\n# plaintext data files\nlibrary(readr)\n\n# csv\ndataset_csv &lt;- read_csv(\"data/demo_fileread.csv\", na = \"empty\")\n\n# tab-delimited file\ndataset_tab &lt;- read_delim(\"data/demo_fileread.txt\", delim = \"\\t\", \n                      escape_double = FALSE, \n                      trim_ws = TRUE)\n\n# Excel file\nlibrary(readxl)\ndataset_excel &lt;- read_excel(\"data/demo_fileread.xlsx\", sheet = \"Sheet1\")\n\n# read SPSS and SAS data file\nlibrary(haven)\ndataset_sav &lt;- read_sav(\"data/demo_fileread.sav\")\n#dataset_sas &lt;- read_sav(\"data/demo_fileread.sas\")\n# dataset operations -----\n\n# stack two or more datasets\ndf1 = data.frame(x= rnorm(10), dataset=1)\ndf2 = data.frame(x= rnorm(10), dataset=2)\ndf3 = data.frame(x= rnorm(10), dataset=3)\ndf_all = bind_rows(df1, df2, df3)\n\n# join datasets by common identifier\ndf_link &lt;- data.frame(dataset=c(1,2,3,4), description=c(\"mock1\", \"mock2\", \"mock3\",\"mock4\"))\ndf_all_link_innerjoin &lt;- df_all %&gt;% inner_join(df_link)\ndf_all_link_fulljoin &lt;- df_all %&gt;% full_join(df_link) # end up with 1 extra due to entry for dataset 4",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#binning-data",
+    "href": "r-primer-syntax-and-basic-functions.html#binning-data",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Binning data",
+    "text": "Binning data\n\nn = 50\ndata_to_bin = data.frame(x = rnorm(n=n,mean=500))\ndata_binned_label = data_to_bin %&gt;% mutate(x_bin = cut(x, breaks=c(0,300,400,500,600,Inf)))\ndata_binned_num = data_to_bin %&gt;% mutate(x_bin = cut(x, breaks=c(0,300,600,800), labels=FALSE))\ndata_binned_ord = data_to_bin %&gt;% mutate(x_bin = cut(x, ordered_result=T, breaks=c(0,300,400,500,600,Inf)))\n\nknitr::kable(head(data_binned_label))\nknitr::kable(head(data_binned_num))",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#string-manipulations",
+    "href": "r-primer-syntax-and-basic-functions.html#string-manipulations",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "String manipulations",
+    "text": "String manipulations\n\n## Search for data in data\ngrep(\"APP\", c(\"APPLES\", \"APP\", \"APPLICATION\"))\ngrep(\"APP\", c(\"APPLES\", \"APP\", \"APPLICATION\"), value=T)\n\n## Replace data in data\ngsub(\"APPLES\",\"BANANAS\",c(\"APPLES\", \"BANANAS\"))\ngsub(\"ERR\",\"ERROR\",c(\"ERR\", \"ERRROR\"))\n# stringi stuff\nlibrary(stringi)\n\nstri_count_fixed(\"ACATGAACGGGTACACACTG\", \"ACA\", overlap=TRUE)\n\nx &lt;- c(\"spam\", \"\")\nstri_length(x)\n\nstri_dup(letters[1:5], 1:5)\n\nwords &lt;- list(c(\"spam\", \"bacon\", \"sausage\", \"spam\"), c(\"eggs\", \"spam\"))\nstri_join_list(words, sep=\", \")",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#generate-random-data",
+    "href": "r-primer-syntax-and-basic-functions.html#generate-random-data",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Generate Random data",
+    "text": "Generate Random data\nx = rnorm(n=500,mean=300,sd=3)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#simple-stats",
+    "href": "r-primer-syntax-and-basic-functions.html#simple-stats",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Simple stats",
+    "text": "Simple stats\nmean(x)\nsd(x)\nmin(x)\nmax(x)\nquantile(x,c(0.6))\nquantile(x,c(0.95))\nquantile(x,c(0.99))",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#data-quality-reports",
+    "href": "r-primer-syntax-and-basic-functions.html#data-quality-reports",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Data quality reports",
+    "text": "Data quality reports\n## Data quality inspection\nknitr::kable(skimr::skim(x)) # one variable \nknitr::kable(skimr::skim(dataset_csv)) # or a whole dataset!\ndqr = skimr::skim(dataset_csv) # save to a variable to later export as csv\nknitr::kable(dqr)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "r-primer-syntax-and-basic-functions.html#data-integrity",
+    "href": "r-primer-syntax-and-basic-functions.html#data-integrity",
+    "title": "R Primer (Syntax and Basic Functions)",
+    "section": "Data integrity",
+    "text": "Data integrity\nMD5 and SHA256 hashes of data are helpful when making snapshots of data for long-term storage and curation. It ensures that the receiver can verify this hash upon opening the dataset and knowing that no data was lost or corrupted in transmission.\nlibrary(digest)\ndigest(\"a\", algo=\"md5\")\ndigest(\"a\", algo=\"sha256\")",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>R Primer (Syntax and Basic Functions)</span>"
+    ]
+  },
+  {
+    "objectID": "anatomy-of-an-r-project.html",
+    "href": "anatomy-of-an-r-project.html",
+    "title": "Anatomy of an R Project",
+    "section": "",
+    "text": "Overview of Approach\nR Projects (opened with .RProj files), are a helpful organizing structure for data science projects. By opening the .RProj file, all paths become relative, making it easier to reference files in your code (data/file.csv, vs, C:/Users/nelson/Documents/NestedFolder/Project/data/file.csv).",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anatomy of an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "anatomy-of-an-r-project.html#creating-an-r-project",
+    "href": "anatomy-of-an-r-project.html#creating-an-r-project",
+    "title": "Anatomy of an R Project",
+    "section": "Creating an R Project",
+    "text": "Creating an R Project\nIn RStudio, navigate to: File &gt; New Project. Next create a project from a New Directory if you do not have a preexisting folder of code, and Existing Directory if you do.",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anatomy of an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "anatomy-of-an-r-project.html#project-organization",
+    "href": "anatomy-of-an-r-project.html#project-organization",
+    "title": "Anatomy of an R Project",
+    "section": "Project Organization",
+    "text": "Project Organization\nWithin the R Project folder, I typically organize the folders and code as follows:\n\ndata: folder containing all project data that is processed locally.\nscripts: folder containing all scripts to run against your data.\noutput: folder to store any deliverables created in your scripts.\nreference: any materials (PDFs, Documents, Presentations) to support your work.\n\nFor example, in a research project your folder may look something like this:\nproject_name\n  project.RProj\n  data\n    demographics.csv\n    rt.csv\n  scripts\n    load_install_libs.R\n    load_data.R\n    preprocess_data.R\n    visualize_data.R\n    model_data.R\n    pipeline.R\n  output\n    data\n      tidy_final_dataset.csv\n    plots\n      figure1.png\n      figure1.pdf\n      figure1.eps\nClick here to download a sample pipeline",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anatomy of an R Project</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-dates.html",
+    "href": "working-with-dates.html",
+    "title": "Working with Dates",
+    "section": "",
+    "text": "Overview\nAt some point in time (:p), you’ll need to work with date data. This tutorial will illustrate concepts including: converting date formats, extracting date information (e.g., day of week, year), and calculate a date relative to another.",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Dates</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-dates.html#load-libs",
+    "href": "working-with-dates.html#load-libs",
+    "title": "Working with Dates",
+    "section": "Load libs",
+    "text": "Load libs\nlibrary(tidyverse)\n# create date matrix\ndf &lt;- expand.grid(month=seq(1,12,1),\n                  day=seq(1,31,1),\n                  year=seq(1930,2030)) %&gt;%\n  mutate(mdy = lubridate::mdy(paste0(month,\"/\",day,\"/\",year))) %&gt;%\n  mutate(dt_month = lubridate::month(mdy),\n         dt_day = lubridate::day(mdy),\n         dt_year = lubridate::year(mdy),\n         dt_week = lubridate::week(mdy),\n         dt_yday = lubridate::yday(mdy),\n         dt_weekday = lubridate::wday(mdy),\n         dt_weekday_l = lubridate::wday(mdy, label=T)) %&gt;%\n  filter(!is.na(dt_weekday)) # remove feb 29, 30, 31\n\nknitr::kable(head(df))\n\n# mark specific dates\ndf_marked &lt;- df %&gt;%\n  mutate(cinco_de_mayo_taco_tuesday = ifelse(dt_month == 5 &\n                                dt_day == 5 &\n                                dt_weekday_l == \"Tue\", 1, 0),\n         friday_13th = ifelse(dt_day == 13 &\n                                dt_weekday_l == \"Fri\", 1, 0),\n         erica_bday = ifelse(dt_day == 4 &\n                               dt_month == 4, 1, 0))\n\n# segment days Alexa mentioned\nall_cinco_de_mayo_taco_tuesday &lt;- df_marked %&gt;%\n  filter(cinco_de_mayo_taco_tuesday == 1)\n\nall_friday13th &lt;- df_marked %&gt;%\n  filter(friday_13th == 1)\n\nall_erica &lt;- df_marked %&gt;%\n  filter(erica_bday == 1) %&gt;%\n  filter(year &gt;= 1991)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Dates</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-dates.html#count-wife-birthday-by-day-of-week",
+    "href": "working-with-dates.html#count-wife-birthday-by-day-of-week",
+    "title": "Working with Dates",
+    "section": "Count wife birthday by day of week",
+    "text": "Count wife birthday by day of week\nerica_wkday &lt;- all_erica %&gt;%\n  group_by(dt_weekday_l) %&gt;%\n  summarise(n = n())",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Dates</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-dates.html#plot-time-series-of-cinco-de-mayo-landing-on-a-tuesday-taco-tuesday",
+    "href": "working-with-dates.html#plot-time-series-of-cinco-de-mayo-landing-on-a-tuesday-taco-tuesday",
+    "title": "Working with Dates",
+    "section": "Plot time series of Cinco de Mayo landing on a Tuesday (Taco Tuesday!)",
+    "text": "Plot time series of Cinco de Mayo landing on a Tuesday (Taco Tuesday!)\nggplot(df_marked, aes(year, cinco_de_mayo_taco_tuesday)) +\n  geom_tile() +\n  theme_minimal()\n\nggplot(df_marked, aes(year, cinco_de_mayo_taco_tuesday)) +\n  geom_path() +\n  theme_minimal()\n\nggplot(erica_wkday, aes(dt_weekday_l, n, group=dt_weekday_l, fill=dt_weekday_l)) +\n  geom_bar(stat=\"identity\")",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Dates</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-dates.html#calculating-dates-relative-to-other-dates",
+    "href": "working-with-dates.html#calculating-dates-relative-to-other-dates",
+    "title": "Working with Dates",
+    "section": "Calculating dates relative to other dates",
+    "text": "Calculating dates relative to other dates\n\n\n\n\n\n\nImportantUse real date types\n\n\n\nThese operations work on types as.Date data types (and related as.POSIXct), not character data.\n\n\nref_date = as.Date(\"2020-10-11\")\npaste0(\"Reference date: \", ref_date)\npaste0(\"Reference date - 90 days: \", ref_date - 90)\npaste0(\"Reference date + 90 days: \", ref_date + 90)",
+    "crumbs": [
+      "Start learning",
+      "02 · Working in R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Dates</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html",
+    "href": "data-wrangling-special-considerations-with-survey-data.html",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "",
+    "text": "Overview\nIn this example, we will work with the qualtRics package to read in Qualtrics exports, and apply minimal pre-processing.",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html#load-data",
+    "href": "data-wrangling-special-considerations-with-survey-data.html#load-data",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "Load data",
+    "text": "Load data\nRead in survey and split StartDate into two columns for easy filtering (we don’t need pilot data)\nlibrary(qualtRics)\nlibrary(tidyverse)\n\n# set filename of survey file\nfn = \"data/demo_qualtrics_export.csv\"\n\n# filter out pilot data\nPILOT_START_DATE = as.Date(\"2022-06-21\")\nqualtrics_df &lt;- read_survey(fn) %&gt;%\n  separate(StartDate, into=c(\"dt_date\", \"dt_time\"), sep=\" \", remove=F) %&gt;%\n  mutate(is_pilot_data = dt_date &lt; PILOT_START_DATE) %&gt;%\n  filter(!is_pilot_data) %&gt;%\n  mutate(participant_id = as.character(ResponseId))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html#split-demographics-into-a-separate-dataset",
+    "href": "data-wrangling-special-considerations-with-survey-data.html#split-demographics-into-a-separate-dataset",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "Split demographics into a separate dataset",
+    "text": "Split demographics into a separate dataset\ndf_demo = qualtrics_df %&gt;%\nselect(ResponseId, contains(\"demo\"))\n\nknitr::kable(df_demo)# %&gt;% kableExtra::kable_paper(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html#split-out-survey-metadata",
+    "href": "data-wrangling-special-considerations-with-survey-data.html#split-out-survey-metadata",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "Split out survey metadata",
+    "text": "Split out survey metadata\ndf_metadata = qualtrics_df %&gt;%\nselect(ResponseId, contains(\"Date\"), contains(\"duration\"), contains(\"progress\"))\n\nknitr::kable(df_metadata)# %&gt;% kableExtra::kable_paper(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html#split-timer-data-into-a-separate-dataset",
+    "href": "data-wrangling-special-considerations-with-survey-data.html#split-timer-data-into-a-separate-dataset",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "Split timer data into a separate dataset",
+    "text": "Split timer data into a separate dataset\ndf_timings = qualtrics_df %&gt;%\nselect(ResponseId, contains(\"timer\"))\n\nknitr::kable(df_timings)# %&gt;% kableExtra::kable_paper(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-special-considerations-with-survey-data.html#score-tipi-data",
+    "href": "data-wrangling-special-considerations-with-survey-data.html#score-tipi-data",
+    "title": "Data Wrangling: Special Considerations with Survey Data",
+    "section": "Score TIPI data",
+    "text": "Score TIPI data\n\nCreate reverse-scoring function\nreverse_code &lt;- function(df, ques_label) {\n  out_df = df %&gt;%\n    filter(tipi_question == ques_label) %&gt;%\n    mutate(response_n = recode(response, \n                               `Disagree strongly` = 7,\n                               `Disagree moderately` = 6, \n                               `Disagree a little` = 5,\n                               `Neither agree nor disagree` = 4,\n                               `Agree a little` = 3, \n                               `Agree moderately` = 2,\n                               `Agree strongly` = 1,\n                               .default=-999))\n  return(out_df)\n}\n\n\nSeparate TIPI data from main qualtrics_df\n# create TIPI dataset -----\ntipi_df = qualtrics_df %&gt;%\n  select(ResponseId, contains(\"TIPI\"), -contains(\"_Timer\"))\n\n\nTransform TIPI from wide to long\ntipi_long = tipi_df %&gt;%\n  pivot_longer(cols=TIPI_1:TIPI_10, names_to=\"tipi_question\", values_to=\"response\")\n\n\nRecode values\ntipi_long_r = tipi_long %&gt;%\n  mutate(response_n = recode(response, \n                             `Disagree strongly` = 1,\n                             `Disagree moderately` = 2, \n                             `Disagree a little` = 3,\n                             `Neither agree nor disagree` = 4,\n                             `Agree a little` = 5, \n                             `Agree moderately` = 6,\n                             `Agree strongly` = 7,\n                             .default=-999))\n\n\nApply Reverse Coding\nNOTE: Extraversion: 1, 6R; Agreeableness: 2R, 7; Conscientiousness; 3, 8R; Emotional Stability: 4R, 9; Openness to Experiences: 5, 10R\ntipi_long_recode2 = reverse_code(tipi_long_r, \"TIPI_2\")\ntipi_long_recode4 = reverse_code(tipi_long_r, \"TIPI_4\")\ntipi_long_recode6 = reverse_code(tipi_long_r, \"TIPI_6\")\ntipi_long_recode8 = reverse_code(tipi_long_r, \"TIPI_8\")\ntipi_long_recode10 = reverse_code(tipi_long_r, \"TIPI_10\")\n\ntipi_long_nonrecoded = tipi_long_r %&gt;%\n  filter(tipi_question %in% c(\"TIPI_1\",\"TIPI_3\",\"TIPI_5\",\"TIPI_7\",\"TIPI_9\"))\n\ntipi_long_recode_all = bind_rows(tipi_long_nonrecoded,\n                                 tipi_long_recode2,\n                                 tipi_long_recode4,\n                                 tipi_long_recode6,\n                                 tipi_long_recode8,\n                                 tipi_long_recode10)\n\n\nFinally transform to wide format\ntipi_wide_recoded = tipi_long_recode_all %&gt;%\n  select(-response) %&gt;%\n  pivot_wider(names_from=\"tipi_question\", values_from=\"response_n\") %&gt;%\n  rowwise() %&gt;%\n  mutate(tipi_extraversion = mean(c(TIPI_1, TIPI_6), na.rm=T)) %&gt;%\n  mutate(tipi_agreeableness = mean(c(TIPI_2, TIPI_7), na.rm=T),\n         tipi_conscientiousness = mean(c(TIPI_3, TIPI_8), na.rm=T),\n         tipi_emostability = mean(c(TIPI_4, TIPI_9), na.rm=T),\n         tipi_openexperience = mean(c(TIPI_5, TIPI_10), na.rm=T))\n\nknitr::kable(tipi_wide_recoded %&gt;% select(contains(\"TIPI_\", ignore.case = F)))# %&gt;% kableExtra::kable_paper(.)\n\nknitr::kable(tipi_wide_recoded %&gt;% select(contains(\"tipi_\", ignore.case = F)))# %&gt;% kableExtra::kable_paper(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Wrangling: Special Considerations with Survey Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html",
+    "href": "data-wrangling-and-visualization-of-big-data.html",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "",
+    "text": "Overview\nFor this example, we are working with the Google Community Mobility Reports dataset.\n“These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.”\nLearn More",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#load-libspackages",
+    "href": "data-wrangling-and-visualization-of-big-data.html#load-libspackages",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Load libs/packages",
+    "text": "Load libs/packages\n\nlibrary(readr)\nlibrary(tidyverse)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#read-in-data",
+    "href": "data-wrangling-and-visualization-of-big-data.html#read-in-data",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Read in data",
+    "text": "Read in data\n# read in the Google Mobility dataset\ngoogle_mobility &lt;- read_csv(\"https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#inspect-dataset-features",
+    "href": "data-wrangling-and-visualization-of-big-data.html#inspect-dataset-features",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Inspect dataset features",
+    "text": "Inspect dataset features\nnrow(google_mobility)\nncol(google_mobility)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#create-lookup-tables",
+    "href": "data-wrangling-and-visualization-of-big-data.html#create-lookup-tables",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Create lookup tables",
+    "text": "Create lookup tables\nR, as well as some packages, have built in datasets. They can be called with the data() function (e.g., data(state)). We will leverage a built in dataset with state metadata.\ndata(state)\nstate_lookup = tibble(sub_region_1 = state.name,\n                      us_division = state.division,\n                      us_region = state.region,\n                      state_land_area = state.area)\n\n# for more state data, look at the following data object (data from 1970s)\nstate.x77",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#pre-process-data",
+    "href": "data-wrangling-and-visualization-of-big-data.html#pre-process-data",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Pre-process data",
+    "text": "Pre-process data\n\nfilter data\nadd meta-date features (month, year, day, etc)\n\n\n# &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\n\n# filter for US\ngoogle_mobility_US &lt;- google_mobility %&gt;%\n  filter(country_region == \"United States\") %&gt;%\n  mutate(dt_date = date) %&gt;%\n  mutate(dt_month = lubridate::month(dt_date),\n         dt_month_ = lubridate::month(dt_date, label=T),\n         dt_year= lubridate::year(dt_date),\n         dt_day = lubridate::day(dt_date),\n         dt_wkday_l = lubridate::wday(dt_date, label=T),\n         dt_wkday_n = lubridate::wday(dt_date)) %&gt;%\n  mutate(dt_weekend = ifelse(dt_wkday_l %in% c(\"Sat\", \"Sun\"), TRUE, FALSE))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#joining-datasets",
+    "href": "data-wrangling-and-visualization-of-big-data.html#joining-datasets",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Joining datasets",
+    "text": "Joining datasets\n\nMerge Google Mobility dataset with R data for US states\n\ngoogle_mobility_US_w_lu &lt;- google_mobility_US %&gt;%\n  inner_join(state_lookup)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#quick-descriptives",
+    "href": "data-wrangling-and-visualization-of-big-data.html#quick-descriptives",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Quick descriptives",
+    "text": "Quick descriptives\n\nsingle line of code descriptives across a dataset\n\n\n#skimr::skim(google_mobility_US)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#filter-data",
+    "href": "data-wrangling-and-visualization-of-big-data.html#filter-data",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Filter data",
+    "text": "Filter data\n\nfilter with specific entries\nfilter for a collection of entries\n\n\n# filter with specific entries\ngoogle_mobility_US_NY &lt;- google_mobility_US %&gt;%\n  filter(sub_region_1 == \"New York\")\n\ngoogle_mobility_US_FL &lt;- google_mobility_US %&gt;%\n  filter(sub_region_1 == \"Florida\")\n\n# &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\n\n# filter to a 'vector' of entries\ngoogle_mobility_US_targeted &lt;- google_mobility_US %&gt;%\n  filter(sub_region_1 %in% c(\"California\", \"New York\", \"Florida\"))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#compute-aggregates",
+    "href": "data-wrangling-and-visualization-of-big-data.html#compute-aggregates",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Compute aggregates",
+    "text": "Compute aggregates\n\n# base R approach\ntable(google_mobility_US$sub_region_1)\n\n# number of records by state\nrecords_per_state = google_mobility_US %&gt;%\n  group_by(sub_region_1) %&gt;%\n  summarise(n_records = n()) %&gt;%\n  arrange(sub_region_1)\nrecords_per_state\n\n# &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\n\n# group data by weekday\nmetrics_month_weekend_US &lt;- google_mobility_US %&gt;%\n  group_by(sub_region_1, dt_year, dt_month_, dt_wkday_l) %&gt;%\n  summarise(avg_change_parks = mean(parks_percent_change_from_baseline, na.rm=T),\n            avg_change_retail_rec = mean(retail_and_recreation_percent_change_from_baseline, na.rm=T),\n            avg_change_workplaces = mean(workplaces_percent_change_from_baseline, na.rm=T)) %&gt;%\n  inner_join(state_lookup)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#visualize-the-data",
+    "href": "data-wrangling-and-visualization-of-big-data.html#visualize-the-data",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Visualize the data",
+    "text": "Visualize the data\n\n# plot summary data across all states\nallUS_retail = ggplot(metrics_month_weekend_US %&gt;% filter(us_region %in% c(\"South\", \"West\")), aes(sub_region_1, avg_change_retail_rec)) +\n  geom_boxplot() +\n  theme_minimal() +\n  theme(axis.text.x=element_text(angle=90)) +\n  facet_wrap(dt_year~.) +\n  labs(x=\"Month\", y=\"Retail (% Change)\")\n\nallUS_parks = ggplot(metrics_month_weekend_US %&gt;% filter(us_region %in% c(\"South\", \"West\")), aes(sub_region_1, avg_change_parks)) +\n  geom_boxplot() +\n  theme_minimal() +\n  facet_wrap(dt_year~.) +\n  theme(axis.text.x=element_text(angle=90)) +\n  labs(x=\"Month\", y=\"Parks (% Change)\")\n\nallUS_retail\nallUS_parks\njitter_retail &lt;- ggplot(metrics_month_weekend_US, aes(dt_month_, \n                                     avg_change_retail_rec, \n                                     group=us_region,\n                                     color=us_region)) +\n  #geom_point() +\n  geom_jitter() +\n  theme_minimal() +\n  labs(x=\"Month\", y=\"Retail & Recreation (% Change)\")\n\nsmooth_retail = ggplot(metrics_month_weekend_US, aes(dt_month_, \n                                     avg_change_retail_rec, \n                                     group=us_region,\n                                     color=us_region)) +\n  #geom_point() +\n  #geom_jitter() +\n  geom_smooth() +\n  theme_minimal() +\n  labs(x=\"Month\", y=\"Retail & Recreation (% Change)\")\n\nsmooth_parks = ggplot(metrics_month_weekend_US, aes(dt_month_, \n                                     avg_change_parks, \n                                     group=us_region,\n                                     color=us_region)) +\n  #geom_point() +\n  #geom_jitter() +\n  geom_smooth() +\n  theme_minimal() +\n  labs(x=\"Month\", y=\"Parks (% Change)\")\n\njitter_retail\nsmooth_retail\nsmooth_parks\nClick here to learn more about geom_smooth",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#combining-multiple-plots",
+    "href": "data-wrangling-and-visualization-of-big-data.html#combining-multiple-plots",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Combining multiple plots",
+    "text": "Combining multiple plots\nlibrary(cowplot)\n\n# create a plot of weekly trends\nearly_covid_retail = ggplot(google_mobility_US_targeted %&gt;%\n         filter(dt_month %in% c(1,2,3,4,5)) %&gt;%\n         filter(dt_year == 2020), aes(dt_date, \n                                    retail_and_recreation_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  geom_jitter() +\n  theme_minimal() +\n  facet_wrap(.~sub_region_1) +\n  labs(x=\"Month\", y=\"Retal & Rec (% Change)\", title=\"2020\")\n\nearly_covid_parks = ggplot(google_mobility_US_targeted %&gt;%\n         filter(dt_month %in% c(1,2,3,4,5)) %&gt;%\n         filter(dt_year == 2020), aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  geom_jitter() +\n  theme_minimal() +\n  facet_wrap(.~sub_region_1) +\n  labs(x=\"Month\", y=\"Parks (% Change)\", title=\"2020\")\n\nnxtyear_covid_retail = ggplot(google_mobility_US_targeted %&gt;%\n         filter(dt_month %in% c(1,2,3,4,5)) %&gt;%\n         filter(dt_year == 2021), aes(dt_date, \n                                    retail_and_recreation_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  geom_jitter() +\n  theme_minimal() +\n  facet_wrap(.~sub_region_1) +\n  labs(x=\"Month\", y=\"Retal & Rec (% Change)\", title=\"2021\")\ncowplot::plot_grid(early_covid_retail, early_covid_parks, ncol=1)\ncowplot::plot_grid(early_covid_retail, nxtyear_covid_retail, ncol=1)\ncowplot::plot_grid(allUS_retail, allUS_parks, ncol=1)\ncowplot::plot_grid(smooth_retail, smooth_parks, ncol=1)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#filter-dataset-for-next-plots",
+    "href": "data-wrangling-and-visualization-of-big-data.html#filter-dataset-for-next-plots",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Filter dataset for next plots",
+    "text": "Filter dataset for next plots\n# Variable names -----\n#   retail_and_recreation_percent_change_from_baseline = col_double(),\n#   grocery_and_pharmacy_percent_change_from_baseline = col_double(),\n#   parks_percent_change_from_baseline = col_double(),\n#   transit_stations_percent_change_from_baseline = col_double(),\n#   workplaces_percent_change_from_baseline = col_double(),\n#   residential_percent_change_from_baseline = col_double()\n\n\nearly_covid_period_data = google_mobility_US_w_lu %&gt;%\n         filter(dt_month %in% c(1,2,3,4,5,6)) %&gt;%\n         filter(dt_year == 2020) %&gt;%\n         filter(sub_region_1 %in% c(\"New York\", \"California\", \"Florida\", \"Wyoming\", \"Texas\", \"Arizona\",\"Montana\", \"South Dakota\", \"Nevada\"))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#styling-your-plots-theme_",
+    "href": "data-wrangling-and-visualization-of-big-data.html#styling-your-plots-theme_",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Styling your plots (theme_*)",
+    "text": "Styling your plots (theme_*)\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  theme_void() +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1) +\n  theme(legend.position = \"none\")\n\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1)\n\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  theme_bw() +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1)\n\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=sub_region_1)) +\n  #geom_point() +\n  theme_dark() +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#production-plots",
+    "href": "data-wrangling-and-visualization-of-big-data.html#production-plots",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Production plots",
+    "text": "Production plots\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=us_region)) +\n  #geom_point() +\n  theme_bw() +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1) +\n  labs(x= \"Date\", y=\"Retail & Recreation (% Change)\")\nggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=us_region)) +\n  #geom_point() +\n  geom_jitter() +\n  facet_wrap(.~sub_region_1) +\n  labs(x= \"Date\", y=\"Retail & Recreation (% Change)\") +\n  theme_bw(base_size = 16) +\n  theme(axis.text.x = element_text(angle=90))\nfig1 &lt;- ggplot(early_covid_period_data, aes(dt_date, \n                                    retail_and_recreation_percent_change_from_baseline,\n                                    color=us_region)) +\n  #geom_point() +\n  #geom_jitter() +\n  geom_smooth() +\n  facet_wrap(.~sub_region_1) +\n  labs(x= \"Date\", y=\"Retail & Recreation (% Change)\",\n       #color=\"State\",\n       tag = \"Figure 1\",\n       title = \"Google Mobility: Change over Time\",\n       subtitle = \"i.e., Retail & Recreation, early COVID-19 period (01/20 - 06/20)\",\n       caption = \"Google Mobility: Retail & Recreation (% Change) over early COVID period (01/20 - 06/20)\") +\n  theme_bw(base_size = 12, base_family = \"Arial\")\n\nfig2 &lt;- ggplot(early_covid_period_data, aes(dt_date, \n                                    parks_percent_change_from_baseline,\n                                    color=us_region)) +\n  #geom_point() +\n  #geom_jitter() +\n  geom_smooth() +\n  facet_wrap(.~sub_region_1) +\n  labs(x= \"Date\", y=\"Retail & Recreation (% Change)\",\n       #color=\"State\",\n       tag = \"Figure 2\",\n       title = \"Google Mobility: Change over Time\",\n       subtitle = \"i.e., Parks, early COVID-19 period (01/20 - 06/20)\",\n       caption = \"Google Mobility: Parks (% Change) over early COVID period (01/20 - 06/20)\") +\n  theme_bw(base_size = 12, base_family = \"Arial\")\nfig1\nfig2",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-wrangling-and-visualization-of-big-data.html#evaluate-regions-of-most-change",
+    "href": "data-wrangling-and-visualization-of-big-data.html#evaluate-regions-of-most-change",
+    "title": "Data Wrangling and Visualization of Big Data",
+    "section": "Evaluate regions of most change",
+    "text": "Evaluate regions of most change\n\nlargest_changes_parks_long &lt;- google_mobility_US %&gt;%\n  group_by(sub_region_1, dt_year) %&gt;%\n  summarise(avg_change_parks = mean(parks_percent_change_from_baseline, na.rm=T)) %&gt;%\n  arrange(sub_region_1)\n\nlargest_changes_parks_wide &lt;- largest_changes_parks_long %&gt;%\n  #pivot_wider(id_cols=c())\n  pivot_wider(names_from = dt_year, values_from = avg_change_parks) %&gt;%\n  mutate(change_2021_2020 = `2021` - `2020`)\n\ntop10_changes &lt;- largest_changes_parks_wide %&gt;%\n  arrange(-change_2021_2020) %&gt;%\n  head(n=10)\n\nbottom10_changes &lt;- largest_changes_parks_wide %&gt;%\n  arrange(change_2021_2020) %&gt;%\n  head(n=10)\n\nlargest_changes_parks_long\nlargest_changes_parks_wide\n\ntop10_changes\nbottom10_changes",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data Wrangling and Visualization of Big Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html",
+    "href": "working-with-text-data.html",
+    "title": "Working with Text Data",
+    "section": "",
+    "text": "Background\nText Mining is the process of analyzing text data for key topics, trends, and hidden relationships. Methods include: - Word frequency analysis - Wordclouds - Topic modeling\nThis collection of methods is especially important since, 80% of the world’s data is in an unstructured format.",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#background",
+    "href": "working-with-text-data.html#background",
+    "title": "Working with Text Data",
+    "section": "",
+    "text": "ImportantThe secret is preprocessing\n\n\n\nAlways consider the data processing implications of your data source. Depending on if you are working with transcriptions form audio or video, or digitized free-entry text, you will want to pre-process your data for misspellings and incorrect transcriptions before proceeding with any text mining.",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#overview",
+    "href": "working-with-text-data.html#overview",
+    "title": "Working with Text Data",
+    "section": "Overview",
+    "text": "Overview\nFor this example, we will work with product review data from the following open science resource: https://osf.io/tyue9\nSalminen, J., Kandpal, C., Kamel, A. M., Jung, S., & Jansen, B. J. (2022). Creating and detecting fake reviews of online products. Journal of Retailing and Consumer Services, 64, 102771. https://doi.org/10.1016/j.jretconser.2021.102771",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#load-libs",
+    "href": "working-with-text-data.html#load-libs",
+    "title": "Working with Text Data",
+    "section": "Load Libs",
+    "text": "Load Libs\nlibrary(readr)\nlibrary(tidyverse)\nlibrary(tidytext)\nlibrary(textdata)\nlibrary(topicmodels)\nlibrary(wordcloud)\nlibrary(ggwordcloud)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#load-full-dataset",
+    "href": "working-with-text-data.html#load-full-dataset",
+    "title": "Working with Text Data",
+    "section": "Load full dataset",
+    "text": "Load full dataset\n# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\ndf &lt;- readr::read_csv(\"data/fake reviews dataset.csv\") %&gt;%\n  mutate(id = row_number()) %&gt;% # add row id\n  select(id, category, everything()) %&gt;%\n  mutate(text_clean = stringr::str_replace_all(text_, \"[^[:alnum:]]\", \" \"))\n  # clean up text a bit\n\n\nunique(df$category)\nunique(df$label)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#produce-a-data-quality-report",
+    "href": "working-with-text-data.html#produce-a-data-quality-report",
+    "title": "Working with Text Data",
+    "section": "Produce a data quality report",
+    "text": "Produce a data quality report\ndf_dq &lt;- skimr::skim(df)\n\nknitr::kable(df_dq)# %&gt;% kableExtra::kable_minimal(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#not-all-lexicons-are-equal",
+    "href": "working-with-text-data.html#not-all-lexicons-are-equal",
+    "title": "Working with Text Data",
+    "section": "Not all lexicons are equal",
+    "text": "Not all lexicons are equal\nGet proportion of stop_words by lexicon (onix, SMART, snowball). Full listing of words available here.\n\nLearn more about onix\nLearn more about SMART\nLearn more about snowball\n\n\nprop.table(table(stop_words$lexicon))\nIf a word you cared about is in the stop word dictionary you will lose it in your analysis. Use the code below if you need to exclude words from the stopword dictionary.\nstop_words_filt = stop_words %&gt;%\n   filter(word != \"better\")\n# Otherwise continue\nstop_words_filt = stop_words",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#tokenize-the-text",
+    "href": "working-with-text-data.html#tokenize-the-text",
+    "title": "Working with Text Data",
+    "section": "Tokenize the text",
+    "text": "Tokenize the text\n\n# text mining analyses ----\nsection_freeresponse_tokens = df %&gt;%\n  unnest_tokens(bigram,\n                \"text_clean\",\n                token = \"ngrams\",\n                n = 2,\n                drop = F) %&gt;%\n  separate(bigram, c(\"word1\", \"word2\"), sep = \" \", remove=F) %&gt;%\n  filter(!word1 %in% stop_words_filt$word) %&gt;%\n  filter(!word2 %in% stop_words_filt$word)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#compute-td-idf-statistic",
+    "href": "working-with-text-data.html#compute-td-idf-statistic",
+    "title": "Working with Text Data",
+    "section": "Compute td-idf statistic",
+    "text": "Compute td-idf statistic\ntf_idf = statistic intended to reflect how important word is to a document\n\n# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\nsection_fr_1_tf_idf = section_freeresponse_tokens %&gt;%\n  count(category, word1) %&gt;%\n  bind_tf_idf(word1, category, n) %&gt;%\n  arrange(desc(tf_idf))\n\nknitr::kable(head(section_fr_1_tf_idf))# %&gt;% kableExtra::kable_paper(.)\nsection_fr_2_tf_idf = section_freeresponse_tokens %&gt;%\n  count(label, word1) %&gt;%\n  bind_tf_idf(word1, label, n) %&gt;%\n  arrange(desc(tf_idf))\n\nknitr::kable(head(section_fr_2_tf_idf))# %&gt;% kableExtra::kable_paper(.)\n\n# vis tf_idf ----\nsection_fr_1_tf_idf %&gt;%\n  group_by(category) %&gt;%\n  slice_max(tf_idf, n = 3) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(tf_idf, fct_reorder(word1, tf_idf), fill = category)) +\n  geom_col(show.legend = FALSE) +\n  facet_wrap(~category, ncol = 2, scales = \"free\") +\n  labs(x = \"tf-idf\", y = NULL)\n\nsection_fr_2_tf_idf %&gt;%\n  group_by(label) %&gt;%\n  slice_max(tf_idf, n = 3) %&gt;%\n  ungroup() %&gt;%\n  ggplot(aes(tf_idf, fct_reorder(word1, tf_idf), fill = label)) +\n  geom_col(show.legend = FALSE) +\n  facet_wrap(~label, ncol = 2, scales = \"free\") +\n  labs(x = \"tf-idf\", y = NULL)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#generate-a-wordcloud",
+    "href": "working-with-text-data.html#generate-a-wordcloud",
+    "title": "Working with Text Data",
+    "section": "Generate a wordcloud",
+    "text": "Generate a wordcloud\n# https://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a\nwordcloud::wordcloud(words = section_fr_1_tf_idf %&gt;% pull(word1),\n                     freq = section_fr_1_tf_idf %&gt;% pull(n),\n                     min.freq = 300,\n                     max.words=200,\n                     random.order=FALSE,\n                     rot.per=0.1)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#conduct-simple-sentiment-analysis",
+    "href": "working-with-text-data.html#conduct-simple-sentiment-analysis",
+    "title": "Working with Text Data",
+    "section": "Conduct simple sentiment analysis",
+    "text": "Conduct simple sentiment analysis\n\nnrc. binary “yes”/“no” for categories positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.\nbing. “positive”/“negative” classification.\nAFINN. score between -5 (most negative) and 5 (most positive).\nloughran. “positive”/“negative”/“litigious”/“uncertainty”/“constraining”/“superflous” classification.\n\n\nVisualize sentiment distribution in each lexicon\nSource code\n\nx1 &lt;- get_sentiments(lexicon = \"nrc\") %&gt;%\n  count(sentiment) %&gt;%\n  mutate(lexicon = \"nrc\")\nx2 &lt;- get_sentiments(lexicon = \"bing\") %&gt;%\n  count(sentiment) %&gt;%\n  mutate(lexicon = \"bing\")\nx3 &lt;- get_sentiments(lexicon = \"afinn\") %&gt;%\n  count(value) %&gt;%\n  mutate(lexicon = \"afinn\") %&gt;%\n  mutate(sentiment = as.character(value)) %&gt;%\n  select(-value)\n# x4 &lt;- get_sentiments(lexicon = \"loughran\") %&gt;%\n#   count(sentiment) %&gt;%\n#   mutate(lexicon = \"loughran\")\nx &lt;- bind_rows(x1, x2, x3)\n\nggplot(x, aes(x = fct_reorder(sentiment, n), y = n, fill = lexicon)) +\n  geom_col(show.legend = FALSE) +\n  coord_flip() +\n  labs(title = \"Sentiment Counts\", x = \"\", y = \"\") +\n  facet_wrap(~ lexicon, scales = \"free\")\n\n\n# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n# sentiment analysis ----\nAFINN &lt;- get_sentiments(\"afinn\")\n\n# more options ---\n# get_sentiments(lexicon = c(\"bing\", \"afinn\", \"loughran\", \"nrc\"))\n\n# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n# merge sentiment with dataset ----\nsent_words &lt;- section_freeresponse_tokens %&gt;%\n  inner_join(AFINN, by = c(word1 = \"word\"))\n\nsent_words_fj &lt;- section_freeresponse_tokens %&gt;%\n  full_join(AFINN, by = c(word1 = \"word\"))\n\n# produce various aggregates of sentiment ----\ncount_words_by_sent = sent_words %&gt;%\n  count(category, value, sort = TRUE) %&gt;%\n  mutate(n_cut = cut(n, c(0,500,3000,Inf)))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#visualize-sentiment",
+    "href": "working-with-text-data.html#visualize-sentiment",
+    "title": "Working with Text Data",
+    "section": "Visualize sentiment",
+    "text": "Visualize sentiment\nggplot(count_words_by_sent, aes(value, n_cut)) +\n  geom_tile() +\n  facet_grid(.~category)\n\navg_sent_by_category = sent_words %&gt;%\n group_by(category) %&gt;%\n  summarise(avg_sent = mean(value, na.rm=T),\n            sd_sent = sd(value, na.rm=T))\n\nmv = ggplot(avg_sent_by_category, aes(category, avg_sent)) +\n  geom_bar(stat=\"identity\") +\n  theme(axis.text.x = element_text(angle=90))\n\nsv = ggplot(avg_sent_by_category, aes(category, sd_sent)) +\n  geom_bar(stat=\"identity\") +\n  theme(axis.text.x = element_text(angle=90))\n\ncowplot::plot_grid(mv, sv, ncol=2)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#topic-modeling-analysis",
+    "href": "working-with-text-data.html#topic-modeling-analysis",
+    "title": "Working with Text Data",
+    "section": "Topic modeling analysis",
+    "text": "Topic modeling analysis\nComing soon! Resource: https://www.tidytextmining.com/topicmodeling.html\n\nap_data = section_fr_1_tf_idf %&gt;%\n  mutate(word1_ = as.character(word1)) %&gt;%\n  cast_dtm(category, word1_, n)\nTopic models in practice use larger k values - k=2 works for this example.\n\nap_lda &lt;- LDA(ap_data, k = 2, control = list(seed = 1234))\nap_topics &lt;- tidy(ap_lda, matrix = \"beta\")\nap_documents &lt;- tidy(ap_lda, matrix = \"gamma\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-text-data.html#visualize-topic-modeling-results",
+    "href": "working-with-text-data.html#visualize-topic-modeling-results",
+    "title": "Working with Text Data",
+    "section": "Visualize topic modeling results",
+    "text": "Visualize topic modeling results\nap_top_terms &lt;- ap_topics %&gt;%\n  filter(!is.na(term)) %&gt;%\n  group_by(topic) %&gt;%\n  slice_max(beta, n = 20) %&gt;%\n  ungroup() %&gt;%\n  arrange(topic, -beta)\n\nap_top_terms %&gt;%\n  mutate(term = reorder_within(term, beta, topic)) %&gt;%\n  ggplot(aes(beta, term, fill = factor(topic))) +\n  geom_col(show.legend = FALSE) +\n  facet_wrap(~ topic, scales = \"free\") +\n  scale_y_reordered()\nVisualize the terms that had the greatest difference in β between topic 1 and topic 2\nthreshold = .006 # low values return more words\nbeta_wide &lt;- ap_topics %&gt;%\n  mutate(topic = paste0(\"topic\", topic)) %&gt;%\n  pivot_wider(names_from = topic, values_from = beta) %&gt;%\n  filter(topic1 &gt; threshold | topic2 &gt; threshold) %&gt;%\n  mutate(log_ratio_t2_t1 = log2(topic2 / topic1))\n\nggplot(beta_wide, aes(log_ratio_t2_t1, term)) +\n  geom_bar(stat=\"identity\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Text Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-json-data.html",
+    "href": "working-with-json-data.html",
+    "title": "Working with JSON Data",
+    "section": "",
+    "text": "Load data\nAs part of my research program, I am developing a chatbot to assess cognitive function. For this example, we will work with a sample output file from the chatbot, in JSON format.",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with JSON Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-json-data.html#load-data",
+    "href": "working-with-json-data.html#load-data",
+    "title": "Working with JSON Data",
+    "section": "",
+    "text": "library(tidyverse)\ncogbot_d = jsonlite::read_json(\"https://cogtasks.com//x/cogbot/data.json\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with JSON Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-json-data.html#pre-process-data-tidy-it",
+    "href": "working-with-json-data.html#pre-process-data-tidy-it",
+    "title": "Working with JSON Data",
+    "section": "Pre-process data (tidy it)",
+    "text": "Pre-process data (tidy it)\n\n# separate data ----\nkeystroke_df = tibble(cogbot_d$keystrokes)\nmessage_df = tibble(cogbot_d$messages)\n\n# pre-process data ----\nmessage_pp = message_df %&gt;% \n  separate(`cogbot_d$messages`,\n           sep = \",\",\n           into = c(\"ts\", \"session_uuid\", \"msg_uuid\", \"msg_id\", \"sender\", \"msg\")) %&gt;%\n  mutate(ts_c = anytime::anytime(gsub('\"', \"\", gsub(\"\\\\[\", \"\", ts)))) %&gt;%\n  select(-ts) %&gt;%\n  select(ts_c, everything())\nhead(message_pp)\n\nkeystroke_pp = keystroke_df %&gt;%\n  separate(`cogbot_d$keystrokes`,\n           sep = \",\",\n           into = c(\"ts\", \"session_uuid\", \"msg_uuid\", \"event_uuid\",\n                    \"e_ts\", \"e_loc\", \"e_key\", \"e_type\", \"e_keycode\",\n                    \"e_which\", \"e_ctrlkey\", \"e_shiftkey\", \"e_altkey\", \"e_metakey\",\n                    \"e_repeat\")) %&gt;%\n  mutate(e_ts_c = as.numeric(e_ts)) %&gt;%\n  mutate(ts_c = anytime::anytime(gsub('\"', \"\", gsub(\"\\\\[\", \"\", ts)))) %&gt;%\n  select(-ts) %&gt;%\n  select(ts_c, everything())\n\nhead(keystroke_pp)\n# merge dataframes ----\n\nboth_pp = keystroke_pp %&gt;%\n  full_join(message_pp, by=c(\"session_uuid\", \"msg_uuid\"))",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with JSON Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-json-data.html#visualize-data",
+    "href": "working-with-json-data.html#visualize-data",
+    "title": "Working with JSON Data",
+    "section": "Visualize data",
+    "text": "Visualize data\n\nKeypresses over time\nggplot(both_pp, aes(e_ts_c, e_key)) + \n  geom_point() +\n  theme_bw() +\n  theme(axis.text.x = element_text(angle=90))\n\n\nKeypresses per question asked by the chatbot\nggplot(both_pp, aes(e_ts_c, e_key)) + \n  geom_point() +\n  theme_bw() +\n  theme(axis.text.x = element_text(angle=90)) + \n  facet_grid(.~msg)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with JSON Data</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-apis.html",
+    "href": "working-with-apis.html",
+    "title": "Working with APIs",
+    "section": "",
+    "text": "Overview\nAPIs make the world go round. From airlines, to your groceries, APIs are charged with securely and efficiently shipping data back and forth between businesses and their consumers.\nThis example will demonstrate how to interact with a set of APIs that cover a range of possible use cases (e.g., paginated and non-paginated returns, authentication).",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with APIs</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-apis.html#overview",
+    "href": "working-with-apis.html#overview",
+    "title": "Working with APIs",
+    "section": "",
+    "text": "WarningBe mindful of limits\n\n\n\nWhen connecting to APIs for data, be mindful of the frequency of requests you make. With overuse, depending on the API, you may be throttled, blocked, or limited for a period of time. Check API documentation for posted limits (e.g., 1000 requests per month).",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with APIs</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-apis.html#public-apis-as-a-learning-tool",
+    "href": "working-with-apis.html#public-apis-as-a-learning-tool",
+    "title": "Working with APIs",
+    "section": "Public APIs as a Learning Tool",
+    "text": "Public APIs as a Learning Tool\nBelow is a list of public APIs you may consider for your learning:\n\nhttps://github.com/public-apis/public-apis\nRandomly Generated Data",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with APIs</span>"
+    ]
+  },
+  {
+    "objectID": "working-with-apis.html#the-data",
+    "href": "working-with-apis.html#the-data",
+    "title": "Working with APIs",
+    "section": "The Data",
+    "text": "The Data\nFor this learning exercise, we will work with an API that generates random data. We will get 10 records of faux user records.\nhttps://random-data-api.com/api/internet_stuff/random_internet_stuff\n\nCustom function to call API and return data frame\ncall_api &lt;- function(api) {\nreturn(as.data.frame(jsonlite::read_json(api)))\n}\nlibrary(tidyverse)\n\nn_records = 10\nresults = list()\nfor(i in 1:n_records) {\n  results[[i]] = call_api(\"https://random-data-api.com/api/internet_stuff/random_internet_stuff\")\n}\nresults_df = bind_rows(results)\nlibrary(knitr)\nlibrary(kableExtra)\nknitr::kable(results_df)# %&gt;% kableExtra::kable_minimal(.)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with APIs</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html",
+    "href": "regression-and-multilevel-modeling.html",
+    "title": "Regression and Multilevel Modeling",
+    "section": "",
+    "text": "Overview\nThis example uses data from a reaction time experiment where observers searched for a green circle amongst rectangles, and were asked to report if a line inside the green circle was vertical or horizontal. On some trials, a red rectangle was present, i.e, a distractor. The experiment was conducted in two ways: (1) a random ordering of distractor present and absent trials, and (2) a blocked ordering of distractor present and absent trials. With blocked administration, presumably participants had time to habituate to the distractor and would have a smaller response time decrement as compared with the random presentation condition.\nIn this example analysis, we will first take a simple approach, and conduct a linear regression, on participant block-level means of response time. Thereafter we will apply multilevel modeling to better capture the nesting and variability inherent in the trial-level data.",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#load-libs",
+    "href": "regression-and-multilevel-modeling.html#load-libs",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Load libs",
+    "text": "Load libs\nlibrary(readr)\nlibrary(tidyverse)\nlibrary(lme4)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#load-data",
+    "href": "regression-and-multilevel-modeling.html#load-data",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Load data",
+    "text": "Load data\nexp_df &lt;- read_csv(\"data/exp1.csv\")\n# show data structure\nhead(exp_df)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#pre-process-data",
+    "href": "regression-and-multilevel-modeling.html#pre-process-data",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Pre-process data",
+    "text": "Pre-process data\n# filter\nexp_pp &lt;- exp_df %&gt;%\n  filter(!is.na(PARTICIPANT))\n\nCreate additional columns, remove columns\n\nexp_pp_ = exp_pp %&gt;%\n  mutate(is_practice = ifelse(practice == \"yes\", 1, 0)) %&gt;%\n  mutate(TRIAL = count_trial_sequence) %&gt;%\n  select(-count_trial_sequence, -response_time, -practice) %&gt;%\n  select(datetime, PARTICIPANT, BLOCK, TRIAL, is_practice, correct, RT, everything()) %&gt;%\n  mutate(EXP_BLOCK_RANDOM = ifelse(isRandom == \"blocked\", 0, 1))\n\n\n\nGet unique metadata\nmetadata = exp_pp_  %&gt;%\n  select(datetime, contains(\"DT_\"), PARTICIPANT, contains(\"EXP_\")) %&gt;%\n  distinct()",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#produce-simple-aggregates",
+    "href": "regression-and-multilevel-modeling.html#produce-simple-aggregates",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Produce simple aggregates",
+    "text": "Produce simple aggregates\n# overall means and record count by participant\npart_means = exp_pp_ %&gt;%\n  group_by(PARTICIPANT, datetime) %&gt;%\n  summarise(mean_rt = mean(RT, na.rm=T),\n            sd_rt = sd(RT, na.rm=T),\n            q10_rt = quantile(RT, probs=0.1, na.rm=T),\n            q90_rt = quantile(RT, probs=0.9, na.rm=T),\n            n_correct = sum(correct),\n            n = n()) %&gt;%\n  inner_join(metadata)\n\n# overall means by block\npart_means_byblock = exp_pp_ %&gt;%\n  group_by(PARTICIPANT, datetime, BLOCK, is_practice, distractor) %&gt;%\n  summarise(mean_rt = mean(RT, na.rm=T),\n            sd_rt = sd(RT, na.rm=T),\n            q10_rt = quantile(RT, probs=0.1, na.rm=T),\n            q90_rt = quantile(RT, probs=0.9, na.rm=T),\n            n_correct = sum(correct),\n            n = n()) %&gt;%\n  inner_join(metadata)\n\nMean center the reaction times\nexp_m = exp_pp_ %&gt;%\n  inner_join(part_means) %&gt;%\n  mutate(imean_c_RT = RT - mean_rt)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#data-visualization",
+    "href": "regression-and-multilevel-modeling.html#data-visualization",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Data visualization",
+    "text": "Data visualization\nggplot(part_means_byblock %&gt;% filter(!is_practice), aes(BLOCK, mean_rt, group=BLOCK, color=as.factor(EXP_BLOCK_RANDOM))) + \n  geom_boxplot() +\n  facet_grid(. ~ EXP_BLOCK_RANDOM) +\n  theme_bw() +\n  labs(x= \"Experiment Block\", y = \"Mean Response Time (ms)\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#predictive-modeling",
+    "href": "regression-and-multilevel-modeling.html#predictive-modeling",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Predictive Modeling",
+    "text": "Predictive Modeling",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#run-simple-regression-on-block-means",
+    "href": "regression-and-multilevel-modeling.html#run-simple-regression-on-block-means",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Run simple regression on block means",
+    "text": "Run simple regression on block means\nfit = lm(mean_rt ~ n_correct + distractor, data=part_means_byblock)\nsummary(fit)\n\nShow resulting model equation\n# show model equation\nlibrary(equatiomatic)\nextract_eq(fit, use_coefs=TRUE, wrap=TRUE)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#run-as-series-of-incremental-multilevel-model",
+    "href": "regression-and-multilevel-modeling.html#run-as-series-of-incremental-multilevel-model",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Run as series of incremental multilevel model",
+    "text": "Run as series of incremental multilevel model\n# run models, starting with unconditional means model\nfitm_0  = lme4::lmer(RT ~ 1 + (1|PARTICIPANT),\n                      data=exp_pp_)\nfitm_1  = lme4::lmer(RT ~ TRIAL + (1|PARTICIPANT),\n                      data=exp_pp_)\nfitm_2  = lme4::lmer(RT ~ TRIAL + is_practice + (1|PARTICIPANT),\n                      data=exp_pp_)\nfitm_3  = lme4::lmer(RT ~ TRIAL + is_practice + correct + (1|PARTICIPANT),\n                      data=exp_pp_)\nfitm_4  = lme4::lmer(RT ~ TRIAL + is_practice + correct +\n                       distractor + \n                       (1|PARTICIPANT),\n                      data=exp_pp_)\nfitm_5  = lme4::lmer(RT ~ TRIAL + is_practice + correct +\n                       distractor + \n                       display_size + \n                       EXP_BLOCK_RANDOM +\n                       (1|PARTICIPANT),\n                      data=exp_pp_)\nextract_eq(fitm_5, use_coefs=TRUE, wrap=TRUE)\n\nCompare models\n# compare models\nanova(fitm_0, fitm_1, fitm_2, fitm_3, fitm_4, fitm_5)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#create-publication-ready-table-of-results",
+    "href": "regression-and-multilevel-modeling.html#create-publication-ready-table-of-results",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Create publication-ready table of results",
+    "text": "Create publication-ready table of results\nsjPlot::tab_model(fitm_0, fitm_5)",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "regression-and-multilevel-modeling.html#create-publication-ready-figure-of-results",
+    "href": "regression-and-multilevel-modeling.html#create-publication-ready-figure-of-results",
+    "title": "Regression and Multilevel Modeling",
+    "section": "Create publication-ready figure of results",
+    "text": "Create publication-ready figure of results\nsjPlot::plot_model(fitm_5, type=\"pred\")",
+    "crumbs": [
+      "Start learning",
+      "03 · Wrangling & analysis",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regression and Multilevel Modeling</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Recommended R packages\nInstall them all in one go with the code below:",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#recommended-r-packages",
+    "href": "resources.html#recommended-r-packages",
+    "title": "Resources",
+    "section": "",
+    "text": "install.packages(c(\"tidyverse\", \"devtools\", \"qualtRics\",\n                   \"tidytext\", \"textdata\", \"topicmodels\",\n                   \"wordcloud\", \"ggwordcloud\", \"lme4\", \"sjPlot\",\n                   \"janitor\", \"esquisse\", \"rio\",\n                   \"cowplot\", \"stringi\", \"digest\"))",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#cheatsheets",
+    "href": "resources.html#cheatsheets",
+    "title": "Resources",
+    "section": "Cheatsheets",
+    "text": "Cheatsheets\n\nList of Cheatsheets\nggplot2\ndplyr\ntidyr\nData import with readr, readxl, and googlesheets4 cheatsheet\nApply functions with purrr\nString manipulation\nWorking with dates and times\nRMarkdown",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#visualization-examples",
+    "href": "resources.html#visualization-examples",
+    "title": "Resources",
+    "section": "Visualization Examples",
+    "text": "Visualization Examples\n\nR-Charts\nDesign your own Grid Plot",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#datasets",
+    "href": "resources.html#datasets",
+    "title": "Resources",
+    "section": "Datasets",
+    "text": "Datasets\n\nDr. Roque’s list of Datasets\nfivethirtyeight\nUK Baby Names\nMore baby names\nTidyTuesday\nLOTR\nMost raw data from gapminder\nUntidy data\nData Science in a Box\nData visualization",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#stats",
+    "href": "resources.html#stats",
+    "title": "Resources",
+    "section": "Stats",
+    "text": "Stats\n\nIntro to R Stats\nMultilevel Modeling Primer 1\nMultilevel modeling Primer 2",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#books",
+    "href": "resources.html#books",
+    "title": "Resources",
+    "section": "Books",
+    "text": "Books\n\nR for Data Science\nR Graphics Cookbook\nEfficient R Programming\nAdvanced R\nText Mining with R\nReproducible Analyses with R",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#blogs",
+    "href": "resources.html#blogs",
+    "title": "Resources",
+    "section": "Blogs",
+    "text": "Blogs\n\nRevolution Analytics\nRBloggers",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html#interactive-learning-tools",
+    "href": "resources.html#interactive-learning-tools",
+    "title": "Resources",
+    "section": "Interactive Learning Tools",
+    "text": "Interactive Learning Tools\n\nSwirl - Interactive R\nDataCamp\nCodeAcademy",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Resources</span>"
+    ]
+  },
+  {
+    "objectID": "workshops.html",
+    "href": "workshops.html",
+    "title": "Workshops",
+    "section": "",
+    "text": "Intro to Reproducible Science: July 6, 8, 11th, 2022; 11am to 2pm\n\nSubmit Questions: Submit your questions here\nLocation: In person at UCF; in PSY301Q\nFormat: Live, with recordings available for later viewing.\nObjectives\n\nDescribe various tools and techniques supportive of open and reproducible science.\nList and describe the FAIR Principles (https://www.go-fair.org/fair-principles)\nDevelop a code-only pipeline to allow reproducibility of data prep and analyses.\nDevelop a long-term learning plan for practicing reproducible science tools and techniques.\n\nDay 1\n\nWhat is Reproducible Science?\nReproducible & FAIR Data Workflows\nTools Supporting Reproducible Science\nOverview of available tools\n\nSkill 1: Using Endnote for Reference Management\nSkill 2: Using Git (and Github) for code management and collaboration\n\nOrientation to R, RStudio, RMarkdown\n\nSkill 3: R syntax primer\n\nData Science: Latest trends\nLong-term Learning Recommendations\n\nDay 2\n\nData wrangling and visualization of Big Data\n\nSkill 1: Data wrangling the Google Mobility dataset\n\nReproducible survey research\n\nQualtrics survey design tips\nSkill 2: Data wrangling Qualtrics data\n\nWorking with JSON data\n\nSkill 3: cleaning and visualizing keystroke JSON data\n\n\nDay 3\n\nText mining\n\nSkill 1: word and bigram frequency analysis\nSkill 2: generating wordclouds\nSkill 3: sentiment analysis\n\nInteracting with APIs and JSON data\n\nSkill 4: querying API for results and data aggregation\n\nClosing Discussion & Q/A",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Workshops</span>"
+    ]
+  },
+  {
+    "objectID": "recordings.html",
+    "href": "recordings.html",
+    "title": "Recordings",
+    "section": "",
+    "text": "Intro to Reproducible Science: July 6, 8, 11th, 2022; 11am to 2pm\n\nDay 1: Recording coming soon!\nDay 2: Recording coming soon!\nDay 3: Recording coming soon!",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Recordings</span>"
+    ]
+  },
+  {
+    "objectID": "closing-acknowledgements.html",
+    "href": "closing-acknowledgements.html",
+    "title": "Closing & Acknowledgements",
+    "section": "",
+    "text": "Thank you\nThank you for your time and engagement in learning via this webcourse. I hope you’ve learned a few useful skills that you can continue to develop over time.",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Closing & Acknowledgements</span>"
+    ]
+  },
+  {
+    "objectID": "closing-acknowledgements.html#acknowledgments",
+    "href": "closing-acknowledgements.html#acknowledgments",
+    "title": "Closing & Acknowledgements",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nI want to thank a number of people who made this possible:\n\nMy wife, daughter\nDr. Mark Neider\nDr. Florian Jentsch\nDr. Cary Stothart\nDr. Justin Mason\nContext Lab students",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Closing & Acknowledgements</span>"
+    ]
+  },
+  {
+    "objectID": "closing-acknowledgements.html#questions-comments-feedback",
+    "href": "closing-acknowledgements.html#questions-comments-feedback",
+    "title": "Closing & Acknowledgements",
+    "section": "Questions, Comments, Feedback?",
+    "text": "Questions, Comments, Feedback?\nFeel free to email me at nelson.roque@ucf.edu if you have any questions, comments, or feedback.",
+    "crumbs": [
+      "Start learning",
+      "04 · Keep learning",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Closing & Acknowledgements</span>"
+    ]
+  }
+]

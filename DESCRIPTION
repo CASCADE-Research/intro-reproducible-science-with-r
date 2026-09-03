@@ -1,0 +1,6 @@
+Package: placeholder
+Type: Book
+Title: This is the book title.
+Version: 0.0.1
+Imports: bookdown
+Remotes: nelsonroque/contextlab_protocols

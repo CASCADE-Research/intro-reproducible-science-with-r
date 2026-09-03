@@ -1,0 +1,17 @@
+bookdown::bs4_book:
+  theme:
+    primary: "#706cac"
+  css: style.css
+  config:
+    search:
+      engine: lunr
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">Introduction to Reproducible Data Science</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+bookdown::pdf_book:
+  pdf_document:
+    latex_engine: xelatex
+bookdown::epub_book: default

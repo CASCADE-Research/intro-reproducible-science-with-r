@@ -1,0 +1,104 @@
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - .nojekyll
+    - data/**
+    - img/**
+
+book:
+  title: "Reproducible Data Science"
+  subtitle: "A practical, open course for building trustworthy research workflows"
+  output-file: reproducible-data-science
+  cover-image: img/book-cover.png
+  cover-image-alt: "Book cover for Reproducible Science by Nelson Roque"
+  downloads: [pdf]
+  author:
+    - name: "Nelson Roque, PhD"
+      affiliation: "Context Lab · University of Central Florida"
+      email: nelson.roque@ucf.edu
+  favicon: img/contextlab-mark.svg
+  site-url: https://nelsonroque.github.io/contextlab_introdatascience_webcourse/
+  repo-url: https://github.com/nelsonroque/contextlab_introdatascience_webcourse
+  repo-actions: [edit, issue]
+  page-navigation: true
+  search:
+    location: navbar
+    type: overlay
+    limit: 8
+    copy-button: true
+    show-item-context: tree
+  navbar:
+    pinned: true
+    logo: img/contextlab-mark.svg
+    logo-alt: "Context Lab course home"
+    title: "Reproducible Data Science"
+    right:
+      - text: "Start learning"
+        href: 01-whatis-reproducible-science.qmd
+  sidebar:
+    style: docked
+    collapse-level: 1
+  chapters:
+    - index.qmd
+    - part: "01 · Foundations"
+      chapters:
+        - 01-whatis-reproducible-science.qmd
+        - 02-reproducible-science-tools.qmd
+    - part: "02 · Working in R"
+      chapters:
+        - 03-r-basics.qmd
+        - 04-r-pipeline.qmd
+        - 05-date-manipulation.qmd
+    - part: "03 · Wrangling & analysis"
+      chapters:
+        - 06-datawrangling-viz-survey.qmd
+        - 07-datawrangling-viz.qmd
+        - 08-text-mining.qmd
+        - 09-working-with-json.qmd
+        - 10-working-with-apis.qmd
+        - 11-stats-reg-modeling.qmd
+    - part: "04 · Keep learning"
+      chapters:
+        - 12-resources.qmd
+        - 13-events.qmd
+        - 14-recordings.qmd
+        - 15-closing.qmd
+  page-footer:
+    left: "© 2026 Nelson Roque · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+    right: "Built with [Quarto](https://quarto.org/)"
+
+bibliography: [book.bib, packages.bib]
+link-citations: true
+
+execute:
+  enabled: false
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [darkly, theme-dark.scss]
+    css: style.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    smooth-scroll: true
+    code-copy: hover
+    code-overflow: wrap
+    code-link: true
+    anchor-sections: true
+    link-external-newwindow: true
+    include-after-body: _includes/course-ui.html
+    grid:
+      sidebar-width: 310px
+      body-width: 820px
+      margin-width: 260px
+      gutter-width: 2rem
+  typst:
+    toc: true
+    section-numbering: "1.1"
+    template-partials:
+      - _includes/typst-show.typ
+
+lang: en

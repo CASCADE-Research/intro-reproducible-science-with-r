@@ -1,0 +1,5 @@
+book_filename: "contextlab-intro-reproducible-science"
+language:
+  ui:
+    chapter_name: "Ch. "
+delete_merged_file: true

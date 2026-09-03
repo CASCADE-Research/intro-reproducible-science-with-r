@@ -1,0 +1,72 @@
+
+## Load Libs
+```{r}
+library(tidyverse)
+```
+
+----
+
+## Read in data
+```{r}
+virus_raw <- read_csv("http://hgis.uw.edu/virus/assets/virus.csv")
+```
+
+## Pre-process data
+
+```{r}
+# what is community spread?
+community_spread_threshold = 24
+
+# clean COVID19 data -----
+virus_global <- virus_raw %>%
+  pivot_longer(-datetime, names_to = "locale", values_to = "cases_string") %>%
+  separate(cases_string, into=c("confirmed", "active", "recovered", "deaths")) %>%
+  mutate(confirmed_n = as.numeric(as.character(confirmed)),
+         active_n = as.numeric(as.character(active)),
+         recovered_n = as.numeric(as.character(recovered)),
+         deaths_n = as.numeric(as.character(deaths))) %>%
+  group_by(locale) %>%
+  mutate(start_community_spread = datetime[min(which(confirmed_n >= community_spread_threshold))]) %>%
+  mutate(days_since_onset = as.numeric(difftime(datetime, start_community_spread, units="days"))) %>%
+  select(-confirmed, -active, -recovered, -deaths) %>%
+  arrange(datetime, locale) %>%
+  mutate(confirmed_lag1 = lag(confirmed_n, n=1),
+         confirmed_lag3 = lag(confirmed_n, n=3),
+         confirmed_lag7 = lag(confirmed_n, n=7)) %>%
+  mutate(deaths_lag1 = lag(deaths_n, n=1),
+         deaths_lag3 = lag(deaths_n, n=3),
+         deaths_lag7 = lag(deaths_n, n=7)) %>%
+  mutate(lag1_growth_confirmed = confirmed_n - confirmed_lag1,
+         lag3_growth_confirmed = confirmed_n - confirmed_lag3,
+         lag7_growth_confirmed = confirmed_n - confirmed_lag7) %>%
+  mutate(lag1_growth_deaths = deaths_n - deaths_lag1,
+         lag3_growth_deaths = deaths_n - deaths_lag3,
+         lag7_growth_deaths = deaths_n - deaths_lag7)
+
+```
+
+## Create United States info tibble from built in R data object
+```{r}
+
+
+data(state)
+us_info = tibble(locale = tolower(state.name), 
+                 abrv = state.abb, 
+                 area = state.area, 
+                 region = state.region,
+                 locale2 = "united states")
+
+```
+
+## segment US data and italy
+```{r}
+virus_us <- virus_global %>%
+  filter(locale %in% c(us_info$locale)) %>%
+  full_join(us_info)
+  
+  #|| 
+        # locale == "italy" ||
+        # locale == "hubei" ||
+        # locale == "uk" ||
+        #  locale == "germany") %>%
+```

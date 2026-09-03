@@ -1,0 +1,76 @@
+---
+title: "Model-based cluster analysis | package: mclust"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Model-based cluster analyses
+Vignette: https://cran.r-project.org/web/packages/mclust/vignettes/mclust.html
+
+### Load libraries
+
+```{r}
+library(mclust)
+library(tidyverse)
+```
+
+### Load data
+
+```{r}
+df <- read_csv("C:/Users/nar09/Box/Nelson_Box/Nelson_iSAHIB/isahib_daily150_2013_0329.csv")
+```
+### Custom function for running model based cluster analysis and merging cluster scores onto dataset
+
+```{r}
+
+merge_cluster_score <- function(df, id_vec, col_vec) {
+  
+  # assumes first column to be the id
+  print("NOTICE: assumes first column to be the id")
+  
+  # isolate necessary columns -----
+  model.df <- df[,col_vec]
+  
+  # select complete data records -----
+  model.complete.df <- model.df[complete.cases(model.df),]
+  
+  # extract participant id column, and keep data for clustering only -
+  data.only <- model.complete.df[,col_vec]
+  part.ids <- model.complete.df[,id_vec]
+  
+  # get model BIC results for all model options -----
+  BIC.results <- mclustBIC(data.only)
+  
+  # get model minimizing BIC -----
+  cluster.model <- Mclust(data.only,x=BIC.results)
+  summary(cluster.model, parameters=T)
+  
+  # merge cluster score onto data -----
+  model.complete.df$cluster <- factor(cluster.model$classification)
+  
+  # merge all other columns back -----
+  final.df <- model.complete.df
+  
+  # return df with cluster score on it
+  return(final.df)
+}
+
+
+```
+
+## Let's run a cluster analysis on the # data of iSAHIB
+
+```{r}
+names(df)
+```
+
+# Run cluster analysis with above function (using id, pos/neg affect)
+# RQ: Can we extract "affect clusters"
+
+```{r}
+df.c <- merge_cluster_score(df, id_vec = c(1:31), col_vec = c(115:116))
+```

@@ -1,0 +1,32 @@
+# Bonus
+
+library(Rcrawler)
+
+# install_browser() # One time only
+
+br <- run_browser()
+page<-LinkExtractor(url="https://towardsdatascience.com/springer-has-released-65-machine-learning-and-data-books-for-free-961f8181f189",
+                    Browser = br, ExternalLInks = TRUE)
+
+el <- page$ExternalLinks
+sprlnks <- el[grep("springer", el, fixed = TRUE)]
+
+for (sprlnk in sprlnks) {
+  spr_page <- LinkExtractor(sprlnk)
+  il <- spr_page$InternalLinks
+  ttl <- spr_page$Info$Title
+  ttl <- trimws(strsplit(ttl, "|", fixed = TRUE)[[1]][1])
+  chapter_link <- il[grep("chapter", il, fixed = TRUE)][1]
+  chp_splits <- strsplit(chapter_link, "/", fixed = TRUE)
+  n <- length(chp_splits[[1]])
+  suff <- chp_splits[[1]][n]
+  suff <- gsub(".{2}$", "", suff)
+  pref <- chp_splits[[1]][n-1]
+  final_url <- paste0("https://link.springer.com/content/pdf/", pref, "/",
+                      suff, ".pdf")
+  print(final_url)
+  download.file(final_url, paste0(ttl, ".pdf"), mode = "wb")
+  Sys.sleep(6)
+}
+
+stop_browser(br)

@@ -1,0 +1,152 @@
+# Working with images
+
+## Load libs
+
+```{r}
+library(tidyverse)
+library(magick)
+library(imager)
+library(pdftools)
+```
+
+## Extract predominant color in images
+
+[Source](https://www.r-bloggers.com/extracting-colours-from-your-images-with-image-quantization)
+
+```{r}
+extract_img_features <- function(im, n=8, cs="RGB"){
+  img <- magick::image_read(im) %>% 
+    magick::image_resize("100") %>% 
+    magick::image_quantize(max = n, colorspace = cs) %>%  ## reducing colours! different colorspace gives you different result
+    imager::magick2cimg() %>%  ## I'm converting, becauase I want to use as.data.frame function in imager package.
+    imager::RGBtoHSV() %>% ## i like sorting colour by hue rather than RGB (red green blue)
+    as.data.frame(wide="c") %>%  #3 making it wide makes it easier to output hex colour
+    mutate(hex=hsv(scales::rescale(c.1, from = c(0,360)), c.2, c.3),
+           hue = c.1,
+           sat = c.2,
+           value = c.3) %>%
+    count(hex, hue, sat, value, sort=T) %>% 
+    mutate(colorspace = cs)
+  
+  return(img %>% select(colorspace, hex, hue, sat, value, n)) ## I want data frame as a result.
+}
+
+plot_img_features <- function(img_features) {
+  p <- img_features %>%  
+    group_by(colorspace) %>%
+    mutate(ypos = row_number(n)) %>%  ## alter stacking order
+    ggplot(aes(x = colorspace, y = ypos, fill = hex)) +
+    geom_tile() +
+    scale_fill_identity() +
+    scale_y_continuous(breaks = NULL) +
+    theme_void() +
+    coord_polar() +
+    expand_limits(y = -1) 
+  return(p)
+}
+
+colorspace = colorspace_types()[10]
+n_colors = 6
+
+im_feats <- extract_img_features("img/sunset.jpg", n = n_colors, cs = colorspace_types()[2])
+plot_img_features(im_feats)
+```
+
+---
+
+## Crop key area of PDF document (e.g., in context of text extraction pipeline)
+```{r}
+# set pdf name
+pdf_filename <- "survey.pdf"
+
+# set place to dump images
+page_img <- pdftools::pdf_convert(pdf_filename, format = "png", pages = NULL, 
+                        filenames = NULL, 
+                        dpi = 300, opw = "", upw = "", 
+                        verbose = TRUE)
+
+# list all filenames for PDF pages as PNGs
+page_imgs <- list.files(pattern=".png", full.names = T)
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# test one image before bulk
+
+# for each page in the PDF get an image
+page_img <- magick::image_read(page_imgs[5])
+
+#from the image, crop it
+magick::image_crop(page_img, "3000x400+210+550")
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# set crop area after reviewing a few images
+crop_area = "3000x400+210+550"
+
+for(i in page_imgs) {
+  # clean filename for export
+  clean_filename <- gsub(".png", "", i)
+  
+  # for each page in the PDF get an image
+  page_img <- magick::image_read(i)
+  
+  #from the image, crop it
+  crop_email <- magick::image_crop(page_img, crop_area)
+
+  # write area with emails cropped
+  image_write(crop_email, paste0(clean_filename, "_email_cellphone_extract", ".png"))
+}
+
+```
+
+---
+
+## Extract text from images
+
+```{r}
+library(tesseract)
+eng <- tesseract("eng")
+text <- tesseract::ocr("http://jeroen.github.io/images/testocr.png", engine = eng)
+cat(text)
+
+results <- tesseract::ocr_data("http://jeroen.github.io/images/testocr.png", engine = eng)
+results
+
+input <- image_read("https://jeroen.github.io/images/bowers.jpg")
+
+text <- input %>%
+  image_resize("2000x") %>%
+  image_convert(type = 'Grayscale') %>%
+  image_trim(fuzz = 40) %>%
+  image_write(format = 'png', density = '300x300') %>%
+  tesseract::ocr() 
+
+cat(text)
+```
+
+
+## Average a set of images
+```{r}
+library(magick)
+
+mags.path <- "img/time/"
+mags.list <- list.files(paste0(mags.path))
+
+img.list <- c()
+i = 1
+for(img in mags.list) {
+  img.path <- paste0(mags.path,img)
+  cur.img <- image_read(img.path)
+ # img.list[i] <- cur.img
+  img.list <- c(img.list,cur.img)
+  print(img)
+}
+
+# Turn frames into animation
+animation <- image_animate(image_join(img.list))
+print(animation)
+
+# Turn frames into animation
+avg.img <- image_average(image_join(img.list))
+print(avg.img)
+```

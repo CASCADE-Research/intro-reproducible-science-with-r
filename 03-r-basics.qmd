@@ -5,9 +5,13 @@ output-file: r-primer-syntax-and-basic-functions
 # R Primer (Syntax and Basic Functions)
 
 ## Overview of Approach
-This tutorial is written as a guide for the question,"how do I do X in R?"
+This tutorial is written as a guide for the question, “How do I do X in R?” It is a reference chapter rather than a script to run from top to bottom. Work through one section at a time, inspect what each line creates, and adapt the examples to a small project of your own.
+
+By the end of the chapter, you should be able to recognize common R object types, move data into and out of R, combine datasets, manipulate strings, calculate descriptive statistics, and verify that a file has not changed.
 
 ## Installing packages
+
+Packages extend base R with specialized functions. Installation usually happens once per computer; loading a package with `library()` happens once per R session. Keeping those two operations separate makes scripts faster and easier to reproduce.
 ```
 # install packages from CRAN ----
 install.packages(c("tidyverse", "devtools"))
@@ -33,6 +37,8 @@ set.seed(1013) # for reproducibility
 
 ## Assign values into variables
 
+Assignment gives an object a name so it can be reused. Descriptive names cost a few extra keystrokes but make later transformations much easier to understand.
+
 ```r
 this_is_double <- 1
 this_is_double2 = 1.0
@@ -46,6 +52,8 @@ this_is_vector <- c(1,2,3)
 
 
 ## Check underlying types
+
+An object's class determines which operations are valid. When a function behaves unexpectedly, checking `class()` is often the fastest first diagnostic.
 ```r
 class(this_is_double)
 class(this_is_double2)
@@ -72,6 +80,8 @@ sampled_values_replace
 ```
 
 ## File operations
+
+Reproducible scripts should discover and create paths deliberately instead of depending on files opened by hand. The following functions list files, check for directories, and create temporary project structure.
 
 ```r
 # list files
@@ -109,6 +119,8 @@ unlink("test", recursive=TRUE)
 
 ## Reading and writing files
 
+Research data arrive in many formats. Prefer formats that preserve the information you need while remaining readable by collaborators, and always confirm that imported column types match your expectations.
+
 ```r
 library(readxl)
 library(readr)
@@ -124,6 +136,8 @@ write_sas(df_for_examples, "data/demo_fileread.sas")
 ```
 
 ## Export multiple dataframes into a single Excel workbook
+
+An Excel workbook can be useful for sharing related tables with collaborators who do not use R. Named sheets preserve the relationship among tables without forcing them into one oversized spreadsheet.
 ```r
 library(rio)
 df_1 = data.frame(x= rnorm(10), dataset=1)
@@ -134,6 +148,8 @@ export(format="xlsx", file="OneExcelWorkbookWith3Sheet.xlsx", x=list(df1=df_1, d
 ```
 
 ## Sanitize column names
+
+Human-friendly survey labels often contain spaces, punctuation, and inconsistent capitalization. Cleaning names once near import prevents repeated quoting and reduces typing errors later.
 
 ```r
 library(janitor)
@@ -193,6 +209,8 @@ df_all_link_fulljoin <- df_all %>% full_join(df_link) # end up with 1 extra due 
 
 ## Binning data
 
+Binning converts a continuous measure into intervals. It can simplify a display or implement a substantively meaningful threshold, but it also discards variation. Keep the original continuous variable alongside the binned version.
+
 ```r
 
 n = 50
@@ -208,6 +226,8 @@ knitr::kable(head(data_binned_num))
 
 
 ## String manipulations
+
+Text cleaning commonly requires two distinct operations: finding patterns and replacing them. Test patterns on a few known examples before applying them to an entire column.
 ```r
 
 ## Search for data in data
@@ -236,11 +256,15 @@ stri_join_list(words, sep=", ")
 
 ## Generate Random data
 
+Simulated data are useful for testing a workflow before sensitive or slow-to-access data are available. Setting a random seed earlier in the script makes the same simulated values reproducible.
+
 ```r
 x = rnorm(n=500,mean=300,sd=3)
 ```
 
 ## Simple stats
+
+Descriptive statistics provide a compact first check of center, spread, range, and unusual values. They should accompany—not replace—inspection and visualization of the distribution.
 
 ```r
 mean(x)
@@ -254,6 +278,8 @@ quantile(x,c(0.99))
 
 ## Data quality reports
 
+A structured quality report helps identify missingness, implausible ranges, and unexpected types before modeling. Save the report when it forms part of the documented decision trail.
+
 ```r
 ## Data quality inspection
 knitr::kable(skimr::skim(x)) # one variable 
@@ -266,8 +292,14 @@ knitr::kable(dqr)
 
 MD5 and SHA256 hashes of data are helpful when making snapshots of data for long-term storage and curation. It ensures that the receiver can verify this hash upon opening the dataset and knowing that no data was lost or corrupted in transmission.
 
+The hash is a fingerprint, not an encryption method. Matching hashes provide strong evidence that two copies contain the same bytes; a mismatch tells you the files differ but not why.
+
 ```r
 library(digest)
 digest("a", algo="md5")
 digest("a", algo="sha256")
 ```
+
+## Takeaways
+
+The individual functions in this chapter are building blocks. A durable workflow connects them in a visible sequence: inspect inputs, transform deliberately, check intermediate results, save outputs, and record enough metadata for someone else—or your future self—to repeat the work.

@@ -4,15 +4,21 @@ output-file: what-is-reproducible-science
 
 # What is reproducible science?
 
+Reproducibility is not one tool or a final checkbox. It is a way of organizing research so that evidence can be traced from the original inputs, through documented decisions and code, to the reported result.
+
+This chapter introduces the distinction between reproducibility and replication, explains why transparent workflows benefit both authors and readers, and connects those practices to the FAIR principles.
+
 ## Activity: Thought Exercise
 
 - What does reproducible science mean to you?
 - Which tools have you previously used?
 - Which tools are you most excited to learn?
 
+Keep your answers nearby as you work through the course. Revisit them at the end and identify which parts of your definition became more concrete.
+
 ## What is reproducible science?
 
-Making entire scientific process transparent (when and as allowable by law, grants).
+Reproducible science makes the research process transparent to the greatest extent permitted by ethics, law, consent, and funding agreements. Transparency does not mean publishing sensitive data without safeguards; it means documenting what can be shared and explaining restrictions on what cannot.
 
   - Sharing experiment and analysis code
   - Detailed methods sections
@@ -31,13 +37,19 @@ Sourced from: [https://www.displayr.com/what-is-reproducible-research](https://w
   - it is easier to reproduce the research independently
   - easier to extend the research
   - reusable code and instruction resulting in increased efficiencies
+
+These benefits also apply within a research team. A well-documented project makes handoffs, error checking, future analyses, and manuscript revisions less dependent on one person's memory.
   
 ### Reproducible vs Replicable
 
   - Reproducible: when the exact results can be reproduced if given access to the original data, software, or code
   - Replicable: research results can be reproduced by independent researchers using different methods.
 
+The terms are sometimes used differently across fields, so define them when writing for a broad audience. In this course, reproducibility means obtaining the same results from the same materials, while replication asks whether the finding persists in a new study.
+
 ## FAIR Principles
+
+FAIR describes properties that help data and related research objects remain useful over time. FAIR does not automatically mean fully open: access can be controlled while metadata, formats, and reuse conditions remain clear.
 
   - ***F: Findable***: "The first step in (re)using data is to find them. Metadata and data should be easy to find for both humans and computers. Machine-readable metadata are essential for automatic discovery of datasets and services"
   - ***A: Accessible***: "Once the user finds the required data, she/he/they need to know how they can be accessed, possibly including authentication and authorisation."
@@ -46,3 +58,7 @@ Sourced from: [https://www.displayr.com/what-is-reproducible-research](https://w
 
   - [Learn more about the FAIR Principles](https://www.go-fair.org/fair-principles/)
   - [FAIR Principles Info PDF](https://www.go-fair.org/wp-content/uploads/2022/01/FAIRPrinciples_overview.pdf)
+
+## Takeaways
+
+A reproducible workflow connects transparency, documentation, code, versioned materials, and clear access conditions. The goal is not perfection; it is to make the path from evidence to claim easier to inspect, repeat, and extend.

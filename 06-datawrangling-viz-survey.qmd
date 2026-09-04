@@ -6,11 +6,13 @@ output-file: data-wrangling-special-considerations-with-survey-data
 
 ## Overview
 
-In this example, we will work with the `qualtRics` package to read in Qualtrics exports, and apply minimal pre-processing.
+Survey exports mix substantive responses with timestamps, progress indicators, timing variables, embedded metadata, and human-readable response labels. Treating that export as analysis-ready can lead to accidental inclusion of pilot cases or incorrect scoring.
+
+In this example, we use the `qualtRics` package to import a Qualtrics export, separate logical groups of variables, and score the Ten-Item Personality Inventory (TIPI). The emphasis is on making each scoring decision explicit and inspectable.
 
 ## Load data
 
-Read in survey and split StartDate into two columns for easy filtering (we don't need pilot data)
+Read the survey, separate `StartDate` into date and time components, and flag pilot records. Keeping the `is_pilot_data` flag during preprocessing documents why rows were excluded.
 
 ```r
 library(qualtRics)
@@ -29,6 +31,8 @@ qualtrics_df <- read_survey(fn) %>%
 ```
 
 ## Split demographics into a separate dataset
+
+Separating demographics creates a participant-level table that can be reviewed, protected, or shared under different rules from item-level response data. `ResponseId` remains as the linkage key.
 ```r
 df_demo = qualtrics_df %>%
 select(ResponseId, contains("demo"))
@@ -37,6 +41,8 @@ knitr::kable(df_demo)# %>% kableExtra::kable_paper(.)
 ```
 
 ## Split out survey metadata
+
+Metadata such as duration and progress are useful for quality checks but are usually not substantive outcomes. Isolating them makes later inclusion decisions deliberate.
 ```r
 df_metadata = qualtrics_df %>%
 select(ResponseId, contains("Date"), contains("duration"), contains("progress"))
@@ -45,6 +51,8 @@ knitr::kable(df_metadata)# %>% kableExtra::kable_paper(.)
 ```
 
 ## Split timer data into a separate dataset
+
+Page- or item-timing variables often have a different analytic grain than one-row-per-participant responses. A dedicated timing table prevents them from cluttering the main dataset.
 ```r
 df_timings = qualtrics_df %>%
 select(ResponseId, contains("timer"))
@@ -55,7 +63,11 @@ knitr::kable(df_timings)# %>% kableExtra::kable_paper(.)
 
 ## Score TIPI data
 
+Scoring a scale is a sequence of transformations rather than one opaque command. We will reshape the items, convert labels to numbers, reverse the negatively keyed items, and then compute trait scores.
+
 ### Create reverse-scoring function
+
+For a seven-point scale, reverse scoring maps 1 to 7, 2 to 6, and so on. Wrapping that rule in a function avoids copying slightly different recode statements for each item.
 
 ```r
 reverse_code <- function(df, ques_label) {
@@ -76,6 +88,8 @@ reverse_code <- function(df, ques_label) {
 
 ### Separate TIPI data from main `qualtrics_df`
 
+Selecting only TIPI columns narrows the working table to the variables needed for scoring while retaining the participant identifier.
+
 ```r
 # create TIPI dataset -----
 tipi_df = qualtrics_df %>%
@@ -83,12 +97,16 @@ tipi_df = qualtrics_df %>%
 ```
 
 ### Transform TIPI from wide to long
+
+The wide export stores one item per column. Long form stores one item response per row, which makes it easier to apply the same recoding logic across questions.
 ```r
 tipi_long = tipi_df %>%
   pivot_longer(cols=TIPI_1:TIPI_10, names_to="tipi_question", values_to="response")
 ```
 
 ### Recode values
+
+Qualtrics exports descriptive labels. Converting them to the intended 1–7 scale is an analytic decision that should be visible in code rather than hidden in spreadsheet edits.
 ```r
 tipi_long_r = tipi_long %>%
   mutate(response_n = recode(response, 
@@ -106,6 +124,8 @@ tipi_long_r = tipi_long %>%
 ### Apply Reverse Coding
 
 NOTE: Extraversion: 1, 6R; Agreeableness: 2R, 7; Conscientiousness; 3, 8R; Emotional Stability: 4R, 9; Openness to Experiences: 5, 10R
+
+The “R” marks negatively keyed items. Those items must be reversed before averaging; otherwise higher values would point in opposite directions within the same trait.
 
 ```r
 tipi_long_recode2 = reverse_code(tipi_long_r, "TIPI_2")
@@ -127,6 +147,8 @@ tipi_long_recode_all = bind_rows(tipi_long_nonrecoded,
 
 ### Finally transform to wide format
 
+Returning to one row per participant makes the scored traits convenient to join with demographics, outcomes, or experimental conditions. Inspect both the recoded items and final scale scores before discarding intermediate objects.
+
 ```r
 tipi_wide_recoded = tipi_long_recode_all %>%
   select(-response) %>%
@@ -142,3 +164,7 @@ knitr::kable(tipi_wide_recoded %>% select(contains("TIPI_", ignore.case = F)))# 
 
 knitr::kable(tipi_wide_recoded %>% select(contains("tipi_", ignore.case = F)))# %>% kableExtra::kable_paper(.)
 ```
+
+## Takeaways
+
+Reliable survey preprocessing preserves identifiers, distinguishes metadata from responses, documents exclusions, and makes scoring rules explicit. Intermediate long-form data are valuable audit artifacts even when the final analysis table is wide.

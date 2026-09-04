@@ -6,7 +6,9 @@ output-file: reproducible-science-tools-platforms
 
 ## Overview
 
-Reproducible Science is supported by a large toolkit of software. Below is a highlight of a few important tools that meet most data needs.
+Reproducible science is supported by a large toolkit, but installing more software does not automatically improve a workflow. Each tool should have a clear role: authoring, version control, computation, environment capture, documentation, or sharing.
+
+This chapter provides a map of that ecosystem. You do not need every item at once; begin with a small stack that fits your work and add complexity only when it solves a real problem.
 
 ## Reproducible Science Tools & Platforms
 
@@ -22,11 +24,13 @@ Reproducible Science is supported by a large toolkit of software. Below is a hig
 - Pre-Registration (e.g., [Open Science Framework](https://osf.io/))
 - Documentation (e.g., [Docusaurus](https://docusaurus.io))
 
+A practical starting stack is R or Python for computation, Quarto or Markdown for narrative documents, Git for version history, and GitHub or another remote host for collaboration. Containers, virtual machines, and infrastructure as code become more valuable when environments or deployments grow complex.
+
 ---
 
 ## What is GitHub?
 
-A platform to store and collaborate on code.
+GitHub hosts Git repositories and adds collaboration features such as pull requests, issues, Actions, and web publishing. Git creates the version history; GitHub stores and coordinates a remote copy of that history.
 
 [Get GitHub Desktop](https://desktop.github.com/)
 
@@ -42,6 +46,8 @@ A platform to store and collaborate on code.
 - `pull`: 'extracting' the result of prior commits
 - `diff`: difference (line-specific) between two commits. Helpful when trying to remember when and where code edits where made.
 
+A good commit captures one understandable change and explains why it was made. Pull before beginning shared work, inspect the diff before committing, and never place credentials or sensitive data in repository history.
+
 ---
 
 ## What is Markdown?
@@ -53,6 +59,8 @@ Created by John Gruber in 2004, Markdown is now one of the world’s most popula
 - Using Markdown is different than using a WYSIWYG editor.
 - In Word, you click buttons in GUI to apply formatting
 - In Markdown, you add syntax to text to apply formatting
+
+Because Markdown is plain text, changes remain readable in a Git diff. That makes prose, methods, and code easier to review together than binary document formats.
 
 For more information, visit: [https://www.markdownguide.org/getting-started/ 
 ](https://www.markdownguide.org/getting-started/ 
@@ -72,15 +80,13 @@ Integrated development environment (IDE) for R.
 
 Download [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
-### What is R Markdown?
+### What is Quarto?
 
-Reproducible notebook (akin to Jupyter Notebooks in Python) where you can write a narrative using Markdown syntax and embed code/plots throughout.
+Quarto is a scientific publishing system in which you write narrative using Markdown and embed executable R, Python, or Julia code. It can produce websites, books, articles, presentations, and other formats from the same source.
 
-Markdown is a simple formatting syntax for authoring HTML, PDF, MS Word and Powerpoint documents, websites and more. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+This course is a Quarto book. When Quarto renders an executable chapter, the resulting document can include the source code together with generated tables and plots. That connection between explanation, computation, and output is central to reproducible reporting.
 
-This is an R Markdown-based book, using the `bookdown` package. 
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+R Markdown and bookdown remain important predecessors and are still used in many projects. Quarto generalizes the same literate-programming approach across languages and output formats.
 
 ### What are R packages?
 
@@ -92,6 +98,8 @@ A developer can also make packages available directly in source code, or via too
 install.packages("devtools")
 devtools::install_github("nelsonroque/ruf")
 ```
+
+Record the packages and versions required by a project. A collaborator needs both the analysis code and a compatible software environment to reproduce the result.
 ---
 
 ## What is EndNote?
@@ -105,6 +113,12 @@ Here is a [guide from the UCF library with installation links](https://guides.uc
 - change citation format at click of a button
 - capture PDFs for any citations at click of a button
 
+The specific citation manager matters less than using one consistently. Zotero, EndNote, Paperpile, and BibTeX-based workflows can all support reproducible writing when citation metadata and export files are maintained with the project.
+
 ### EndNote downloads
 - [Mac](http://ezproxy.library.ucf.edu/loggedin/EndNote20SiteInstaller.zip)
 - [Windows](http://ezproxy.library.ucf.edu/loggedin/EndNote20.zip)
+
+## Takeaways
+
+Choose tools by function, keep the core stack small, and document how the pieces connect. Version control preserves change history, plain-text formats enable review, computational tools generate results, and publishing systems assemble those materials into outputs others can inspect.

@@ -4,9 +4,11 @@ output-file: resources
 
 # Resources
 
+This chapter is a launch point for continued practice. Do not try to consume every resource at once. Choose one that addresses the next concrete problem in your own project, work through an example, and record what you learned in code.
+
 ## Recommended R packages
 
-Install them all in one go with the code below:
+These packages cover the topics introduced across the course. In a real project, install only the packages you use and record their versions with a dependency-management tool such as `renv`.
 ```
 install.packages(c("tidyverse", "devtools", "qualtRics",
                    "tidytext", "textdata", "topicmodels",
@@ -16,6 +18,8 @@ install.packages(c("tidyverse", "devtools", "qualtRics",
 ```
 
 ## Cheatsheets
+
+Cheatsheets are most useful after you understand the underlying concept and need help recalling syntax. Keep the relevant sheet nearby while practicing rather than attempting to memorize every function.
 
   - [List of Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
   - [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
@@ -29,10 +33,14 @@ install.packages(c("tidyverse", "devtools", "qualtRics",
 
 ## Visualization Examples
 
+Use galleries to study how chart type, grouping, scales, labels, and annotation affect interpretation. Recreate a useful example with your own data instead of copying its appearance without understanding the mapping.
+
   - [R-Charts](https://r-charts.com/)
   - [Design your own Grid Plot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
   
 ## Datasets
+
+Public datasets are valuable for skill building because they let you focus on methods without waiting for data collection. Read their documentation and license, and do not assume that “public” means clean, representative, or unrestricted.
 
  - [Dr. Roque's list of Datasets](https://github.com/nelsonroque/datasets)
  - [fivethirtyeight](https://fivethirtyeight-r.netlify.com/)
@@ -46,11 +54,15 @@ install.packages(c("tidyverse", "devtools", "qualtRics",
  - [Data visualization](https://kieranhealy.org/blog/archives/2018/12/12/teaching-and-learning-materials-for-data-visualization/)
   
 ## Stats
+
+Statistical tutorials are starting points, not substitutes for understanding assumptions. Pair code examples with methodological references and diagnostics appropriate to your design.
   - [Intro to R Stats](https://www.cyclismo.org/tutorial/R/)
   - [Multilevel Modeling Primer 1](https://quantdev.ssri.psu.edu/tutorials/r-bootcamp-introduction-multilevel-model-and-interactions)
   - [Multilevel modeling Primer 2](https://rpubs.com/rslbliss/r_mlm_ws)
   
 ## Books
+
+Books provide the sustained narrative that isolated code examples often lack. Select one aligned with your current level and reproduce examples actively in a separate practice project.
 
   - [R for Data Science](https://r4ds.had.co.nz/)
   - [R Graphics Cookbook](http://www.cookbook-r.com/)
@@ -61,10 +73,18 @@ install.packages(c("tidyverse", "devtools", "qualtRics",
 
 ## Blogs
 
+Blogs can surface practical techniques quickly, but posts vary in age and review. Check publication dates, package documentation, and primary references before adopting a workflow.
+
   - [Revolution Analytics](https://blog.revolutionanalytics.com/)
   - [RBloggers](https://www.r-bloggers.com/)
 
 ## Interactive Learning Tools
+
+Interactive tools are especially effective for short feedback loops. Use them to practice a concept, then transfer that concept into a durable local script where your work can be versioned.
   - [Swirl - Interactive R](https://swirlstats.com/)
   - [DataCamp](https://www.datacamp.com/courses/free-introduction-to-r)
   - [CodeAcademy](https://www.codecademy.com/catalog/language/r)
+
+## A sustainable learning plan
+
+Pick one small dataset and revisit it as your skills grow: import it, document it, reshape it, visualize it, model it, and publish the result. A connected project builds stronger intuition than many disconnected tutorials.

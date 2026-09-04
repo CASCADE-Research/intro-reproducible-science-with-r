@@ -8,6 +8,18 @@ output-file: closing-acknowledgements
 
 Thank you for your time and engagement in learning via this webcourse. I hope you've learned a few useful skills that you can continue to develop over time.
 
+Reproducibility grows through repeated practice. Begin with one improvement you can sustain—an R Project, relative paths, scripted cleaning, version control, or a rendered report—and expand the workflow as your research requires.
+
+Before closing the course, choose an existing project and ask:
+
+- Can someone identify the raw inputs and the generated outputs?
+- Can the analysis be rerun without manual spreadsheet edits?
+- Are exclusions, transformations, and modeling decisions visible?
+- Are software and data-access requirements documented?
+- Could your future self understand the project six months from now?
+
+Those questions turn the course concepts into a concrete next step.
+
 ## Acknowledgments
 
 I want to thank a number of people who made this possible:

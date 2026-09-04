@@ -7,9 +7,13 @@ output-file: anatomy-of-an-r-project
 ## Overview of Approach
 R Projects (opened with .RProj files), are a helpful organizing structure for data science projects. By opening the .RProj file, all paths become relative, making it easier to reference files in your code (`data/file.csv`, vs, `C:/Users/nelson/Documents/NestedFolder/Project/data/file.csv`).
 
+Relative paths make a project portable: another person can clone the folder to a different location without rewriting every filename. The project directory becomes the stable reference point for code, data, and outputs.
+
 ## Creating an R Project
 
 In RStudio, navigate to: `File > New Project`. Next create a project from a `New Directory` if you do not have a preexisting folder of code, and `Existing Directory` if you do.
+
+Open the project itself rather than changing the working directory manually inside scripts. Commands such as `setwd()` often encode one person's computer layout and make shared code brittle.
 
 ## Project Organization
 
@@ -19,6 +23,8 @@ Within the R Project folder, I typically organize the folders and code as follow
   - `scripts`: folder containing all scripts to run against your data.
   - `output`: folder to store any deliverables created in your `scripts`.
   - `reference`: any materials (PDFs, Documents, Presentations) to support your work.
+
+The exact folder names can vary. Consistency matters more than one universal template: raw inputs should remain distinguishable from derived data, scripts should have an understandable execution order, and generated outputs should be reproducible rather than edited by hand.
   
 For example, in a research project your folder may look something like this:
 
@@ -44,4 +50,10 @@ project_name
       figure1.eps
 ```
 
+The pipeline script acts as an entry point that runs the stages in order. Smaller scripts remain easier to test and navigate, while the entry point gives collaborators one documented command for rebuilding the analysis.
+
 [Click here to download a sample pipeline](https://github.com/nelsonroque/contextlab_reproduciblescience_workshops)
+
+## Takeaways
+
+A project is a self-contained unit, not merely a folder of unrelated files. Use relative paths, separate inputs from derived outputs, organize scripts by responsibility, and provide one clear route for reproducing the complete workflow.

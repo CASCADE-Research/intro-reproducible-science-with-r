@@ -5,9 +5,13 @@ output-file: working-with-dates
 # Working with Dates
 
 ## Overview
-At some point in time (:p), you'll need to work with date data. This tutorial will illustrate concepts including: converting date formats, extracting date information (e.g., day of week, year), and calculate a date relative to another.
+At some point in time (:p), you'll need to work with date data. Dates look simple when displayed, but internally they must carry a real date or date-time class before R can sort, subtract, group, or plot them reliably.
+
+This chapter shows how to construct dates, extract calendar features such as month and weekday, flag dates that satisfy a rule, summarize recurring events, and calculate dates relative to a reference point.
 
 ## Load libs
+
+The tidyverse handles transformation and plotting; the lubridate functions used below make parsing and extracting date components more readable.
 ```r
 library(tidyverse)
 ```
@@ -30,6 +34,8 @@ df <- expand.grid(month=seq(1,12,1),
 knitr::kable(head(df))
 
 ```
+
+The grid intentionally includes impossible dates such as February 30. `mdy()` converts those combinations to missing values, and the final filter removes them. This illustrates why validating parsed dates is part of data cleaning.
 
 ```r
 
@@ -56,7 +62,11 @@ all_erica <- df_marked %>%
 
 ```
 
+Each indicator expresses a calendar rule as a logical condition. Separating the rule definition from later filtering makes the analysis easier to audit and extend.
+
 ## Count wife birthday by day of week
+
+Once dates have labeled weekdays, an ordinary grouped count answers a calendar question. The same pattern works for appointment attendance, daily diary completion, or events recorded by day of week.
 ```r
 erica_wkday <- all_erica %>%
   group_by(dt_weekday_l) %>%
@@ -65,6 +75,8 @@ erica_wkday <- all_erica %>%
 ```
 
 ## Plot time series of Cinco de Mayo landing on a Tuesday (Taco Tuesday!)
+
+Different geometries emphasize different aspects of the same data. Tiles highlight which years meet the condition; paths emphasize recurrence over time; bars summarize frequency by category.
 
 ```r
 ggplot(df_marked, aes(year, cinco_de_mayo_taco_tuesday)) +
@@ -93,3 +105,7 @@ paste0("Reference date: ", ref_date)
 paste0("Reference date - 90 days: ", ref_date - 90)
 paste0("Reference date + 90 days: ", ref_date + 90)
 ```
+
+## Takeaways
+
+Parse character values into real date classes early, check for failed conversions, and derive calendar features only after parsing. Once dates are represented correctly, filtering, grouping, arithmetic, and visualization use the same grammar as other tidy data operations.

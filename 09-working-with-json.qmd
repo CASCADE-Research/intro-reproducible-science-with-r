@@ -6,7 +6,13 @@ output-file: working-with-json-data
 
 As part of my research program, I am developing a chatbot to assess cognitive function. For this example, we will work with a sample output file from the chatbot, in JSON format.
 
+JSON is designed to represent nested objects and arrays, while analysis usually expects rectangular tables. The central task in this chapter is therefore not merely reading the file—it is deciding what each nested structure represents and how those structures relate.
+
+By the end, you will be able to inspect a JSON response, separate different event types into tables, normalize timestamps, join tables at the correct grain, and visualize event sequences.
+
 ## Load data
+
+`read_json()` preserves the nested structure as R lists. Before transforming a real dataset, inspect names and a few elements so that you understand which fields are records, attributes, or nested collections.
 ```r
 library(tidyverse)
 cogbot_d = jsonlite::read_json("https://cogtasks.com//x/cogbot/data.json")
@@ -14,6 +20,8 @@ cogbot_d = jsonlite::read_json("https://cogtasks.com//x/cogbot/data.json")
 ```
 
 ## Pre-process data (tidy it)
+
+The chatbot stores messages and keystrokes as separate event streams. Creating one table per stream respects their different grains: one row per message versus one row per key event.
 ```r
 
 # separate data ----
@@ -45,6 +53,8 @@ keystroke_pp = keystroke_df %>%
 head(keystroke_pp)
 ```
 
+The timestamp conversions create values that R can order and plot. Keeping identifiers such as `session_uuid` and `msg_uuid` is essential because they describe which events can be connected safely.
+
 ```r
 # merge dataframes ----
 
@@ -53,9 +63,15 @@ both_pp = keystroke_pp %>%
 
 ```
 
+A full join retains unmatched events from either stream. That is useful for diagnosis, but it can also multiply rows when a message has many keystrokes. Check row counts and key uniqueness before treating the joined table as participant-level data.
+
 ## Visualize data
 
+Event plots are quality checks as well as substantive displays. They can expose bursts, long pauses, duplicated timestamps, and key events that were not linked to a message.
+
 ### Keypresses over time
+
+The first view uses elapsed event time on the horizontal axis and key value on the vertical axis. Dense regions indicate rapid sequences of input.
 ```r
 ggplot(both_pp, aes(e_ts_c, e_key)) + 
   geom_point() +
@@ -64,6 +80,8 @@ ggplot(both_pp, aes(e_ts_c, e_key)) +
 ```
 
 ### Keypresses per question asked by the chatbot
+
+Faceting by message separates the interaction into conversational contexts. This makes it easier to compare how users responded to different prompts without drawing every event in one panel.
 ```r
 ggplot(both_pp, aes(e_ts_c, e_key)) + 
   geom_point() +
@@ -71,3 +89,7 @@ ggplot(both_pp, aes(e_ts_c, e_key)) +
   theme(axis.text.x = element_text(angle=90)) + 
   facet_grid(.~msg)
 ```
+
+## Takeaways
+
+Tidying JSON requires a data model: identify event types, preserve linkage keys, convert timestamps deliberately, and verify join cardinality. Once those decisions are explicit, familiar tidyverse tools can analyze the resulting tables.

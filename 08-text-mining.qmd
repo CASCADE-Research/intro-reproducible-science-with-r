@@ -23,7 +23,11 @@ For this example, we will work with product review data from the following open 
 
 Salminen, J., Kandpal, C., Kamel, A. M., Jung, S., & Jansen, B. J. (2022). Creating and detecting fake reviews of online products. Journal of Retailing and Consumer Services, 64, 102771. https://doi.org/10.1016/j.jretconser.2021.102771
 
+We will move from raw reviews to tokens, compare term importance across groups, apply dictionary-based sentiment scores, and introduce topic modeling. Each method answers a different question; none provides a complete interpretation of a review by itself.
+
 ## Load Libs
+
+Text analysis combines general data-wrangling packages with packages for tokenization, lexicons, document-term matrices, and visualization. Loading them together makes those dependencies visible at the start.
 ```r
 library(readr)
 library(tidyverse)
@@ -35,6 +39,8 @@ library(ggwordcloud)
 ```
 
 ## Load full dataset
+
+Assigning a stable row identifier before tokenization lets us reconnect derived words or scores to the original review. The cleaning step removes punctuation while preserving letters and numbers.
 ```r
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -50,6 +56,8 @@ unique(df$label)
 ```
 
 ## Produce a data quality report
+
+Text pipelines still require ordinary data-quality checks. Missing labels, empty reviews, duplicated rows, and unexpected categories can all distort later word counts.
 ```r
 df_dq <- skimr::skim(df)
 
@@ -61,6 +69,8 @@ knitr::kable(df_dq)# %>% kableExtra::kable_minimal(.)
 ## Not all lexicons are equal
 
 Get proportion of stop_words by lexicon (onix, SMART, snowball). Full listing of words [available here](https://www.kaggle.com/code/therohk/stopwords-compared-snowball-smart-onix/report).
+
+Stop-word lists encode judgments about which words carry little information. Those judgments are context dependent: a word that is unimportant in general prose may distinguish product categories or review styles.
 
   - [Learn more about `onix`](http://www.lextek.com/manuals/onix/stopwords1.html)
   - [Learn more about `SMART`](https://www.jmlr.org/papers/volume5/lewis04a/lewis04a.pdf)
@@ -85,6 +95,8 @@ stop_words_filt = stop_words
 ```
 
 ## Tokenize the text
+
+Tokenization turns a character string into analyzable units. Here the unit is a bigram—a pair of adjacent words—although the next analyses focus on the component words after removing stop words.
 ```r
 
 # text mining analyses ----
@@ -101,9 +113,9 @@ section_freeresponse_tokens = df %>%
 ```
 
 
-## Compute [td-idf statistic](https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/)
+## Compute [tf-idf statistic](https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/)
 
-`tf_idf` = statistic intended to reflect how important word is to a document
+`tf_idf` balances frequency against distinctiveness. A term receives a high value when it appears often in one category but is comparatively uncommon across other categories. It is therefore more informative than a raw word count when the goal is comparison.
 
 ```r
 
@@ -117,6 +129,8 @@ section_fr_1_tf_idf = section_freeresponse_tokens %>%
 knitr::kable(head(section_fr_1_tf_idf))# %>% kableExtra::kable_paper(.)
 
 ```
+
+The first table compares product categories; the second compares review labels. Keeping those grouping variables separate avoids treating “category” and “authenticity label” as interchangeable concepts.
 
 ```r
 section_fr_2_tf_idf = section_freeresponse_tokens %>%
@@ -150,7 +164,11 @@ section_fr_2_tf_idf %>%
 
 ```
 
+The faceted bars make the most distinctive terms visible within each group. Because every panel can use its own scale, compare rankings within panels more readily than absolute bar lengths across panels.
+
 ## Generate a wordcloud
+
+Word clouds are useful for exploration and engagement, but position and area are difficult to compare precisely. Use them as a companion to ranked counts or tf-idf tables rather than as the sole result.
 ```r
 # https://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a
 wordcloud::wordcloud(words = section_fr_1_tf_idf %>% pull(word1),
@@ -164,12 +182,16 @@ wordcloud::wordcloud(words = section_fr_1_tf_idf %>% pull(word1),
 
 ## Conduct simple sentiment analysis
 
+Lexicon-based sentiment joins words to scores or categories supplied by a dictionary. It is transparent and fast, but it can miss negation, sarcasm, domain-specific meaning, and relationships between words.
+
   - nrc. binary “yes”/“no” for categories positive, negative, anger, anticipation, disgust, fear, joy, sadness, surprise, and trust.
   - bing. “positive”/“negative” classification.
   - AFINN. score between -5 (most negative) and 5 (most positive). 
   - loughran. “positive”/“negative”/“litigious”/“uncertainty”/“constraining”/“superflous” classification.
   
 ### Visualize sentiment distribution in each lexicon
+
+Before applying a lexicon, inspect what it contains. The available outcome categories differ substantially across NRC, Bing, and AFINN, so choosing a lexicon changes the question being answered.
 
 [Source code](https://bookdown.org/mpfoley1973/data-sci/sentiment-analysis.html)
   
@@ -227,6 +249,8 @@ count_words_by_sent = sent_words %>%
 
 ## Visualize sentiment
 
+After joining AFINN scores to tokens, we can summarize both the typical score and its variation by category. Remember that unmatched words are omitted; a sentiment average describes matched vocabulary, not necessarily every review in full.
+
 ```
 ggplot(count_words_by_sent, aes(value, n_cut)) +
   geom_tile() +
@@ -252,8 +276,9 @@ cowplot::plot_grid(mv, sv, ncol=2)
 ---
 
 ## Topic modeling analysis
-Coming soon!
 Resource: https://www.tidytextmining.com/topicmodeling.html
+
+Topic models represent documents as mixtures of latent topics and topics as distributions over words. Here categories serve as documents for a compact demonstration. In substantive research, model selection and validation require more documents, sensitivity checks, and close reading of representative texts.
 
 ```r
 
@@ -265,6 +290,8 @@ ap_data = section_fr_1_tf_idf %>%
 
 Topic models in practice use larger `k` values - `k=2` works for this example.
 
+Setting `k = 2` asks the model to find two word distributions. This is a teaching choice rather than evidence that the corpus truly contains exactly two themes.
+
 ```r
 
 ap_lda <- LDA(ap_data, k = 2, control = list(seed = 1234))
@@ -274,6 +301,8 @@ ap_documents <- tidy(ap_lda, matrix = "gamma")
 
 
 ## Visualize topic modeling results
+
+The beta value is the estimated probability of a term within a topic. Showing the highest-beta terms provides a first interpretation, but topic labels still require judgment from the analyst.
 ```r
 ap_top_terms <- ap_topics %>%
   filter(!is.na(term)) %>%
@@ -304,3 +333,9 @@ beta_wide <- ap_topics %>%
 ggplot(beta_wide, aes(log_ratio_t2_t1, term)) +
   geom_bar(stat="identity")
 ```
+
+Terms near zero are similarly associated with both topics; terms farther from zero help distinguish them. Always return to the original reviews to verify that a statistical pattern makes sense in context.
+
+## Takeaways
+
+Text mining is a chain of consequential choices: cleaning rules, token size, stop words, grouping variables, lexicons, and model parameters. Preserve the raw text, document each choice, and pair quantitative summaries with qualitative inspection.

@@ -9,7 +9,11 @@ This example uses data from a reaction time experiment where observers searched 
 
 In this example analysis, we will first take a simple approach, and conduct a linear regression, on participant block-level means of response time. Thereafter we will apply multilevel modeling to better capture the nesting and variability inherent in the trial-level data.
 
+The comparison illustrates a general principle: aggregation can simplify a question, but it can also discard trial-level information and obscure dependency among observations. Multilevel models represent repeated trials nested within participants directly.
+
 ## Load libs
+
+The workflow uses tidyverse tools for preparation, `lme4` for mixed-effects models, and later helper packages for equations and publication-oriented summaries.
 
 ```r
 library(readr)
@@ -18,6 +22,8 @@ library(lme4)
 ```
 
 ## Load data
+
+Always inspect raw dimensions, names, and representative rows before filtering. Reaction-time files often include practice trials, missing identifiers, incorrect responses, and timing outliers that require explicit decisions.
 ```r
 exp_df <- read_csv("data/exp1.csv")
 ```
@@ -29,6 +35,8 @@ head(exp_df)
 ---
 
 ## Pre-process data
+
+Preprocessing defines the analytic sample. Here records without participant identifiers are excluded; a complete analysis should also document decisions about practice trials, accuracy, and implausibly fast or slow responses.
 ```r
 # filter
 exp_pp <- exp_df %>%
@@ -36,6 +44,8 @@ exp_pp <- exp_df %>%
 ```
 
 ### Create additional columns, remove columns
+
+Renaming and reordering create a clearer analysis table. The binary presentation variable encodes blocked versus random administration, but its reference category should be recorded before interpreting a coefficient.
 ```r
 
 exp_pp_ = exp_pp %>%
@@ -49,6 +59,8 @@ exp_pp_ = exp_pp %>%
 ---
 
 ### Get unique metadata
+
+Participant- or session-level metadata should appear once per higher-level unit. Creating a distinct table makes duplicated or conflicting metadata easier to detect before joining.
 ```r
 metadata = exp_pp_  %>%
   select(datetime, contains("DT_"), PARTICIPANT, contains("EXP_")) %>%
@@ -58,6 +70,8 @@ metadata = exp_pp_  %>%
 ---
 
 ## Produce simple aggregates
+
+Participant summaries provide a useful descriptive view and support the initial regression. Quantiles are included because reaction-time distributions are often skewed and may not be well described by the mean alone.
 
 ```r
 # overall means and record count by participant
@@ -83,6 +97,8 @@ part_means_byblock = exp_pp_ %>%
   inner_join(metadata)
 ```
 ### Mean center the reaction times
+
+Person-mean centering expresses each trial relative to that participant's typical response. Centering changes coefficient interpretation, so the chosen reference must be described whenever centered variables enter a model.
 ```r
 exp_m = exp_pp_ %>%
   inner_join(part_means) %>%
@@ -91,6 +107,8 @@ exp_m = exp_pp_ %>%
 ---
 
 ## Data visualization
+
+Visualize distributions before modeling. The boxplots reveal differences in center, spread, and possible outliers across blocks and presentation conditions that a single coefficient could conceal.
 
 ```r
 ggplot(part_means_byblock %>% filter(!is_practice), aes(BLOCK, mean_rt, group=BLOCK, color=as.factor(EXP_BLOCK_RANDOM))) + 
@@ -104,7 +122,11 @@ ggplot(part_means_byblock %>% filter(!is_practice), aes(BLOCK, mean_rt, group=BL
 
 ## Predictive Modeling
 
+A model is a formal statement about an outcome, predictors, and error structure. Begin with the simplest model that answers the question, then add complexity for a substantive reason rather than only to improve fit.
+
 ## Run simple regression on block means
+
+This regression treats block summaries as independent observations. It is easy to communicate, but repeated blocks from the same participant violate that independence assumption.
 ```r
 fit = lm(mean_rt ~ n_correct + distractor, data=part_means_byblock)
 summary(fit)
@@ -118,6 +140,8 @@ extract_eq(fit, use_coefs=TRUE, wrap=TRUE)
 ```
 
 ## Run as series of incremental multilevel model
+
+The incremental sequence starts with a random-intercept model and adds predictors one group at a time. The participant intercept captures stable differences in overall response speed while fixed effects describe average associations.
 ```r
 # run models, starting with unconditional means model
 fitm_0  = lme4::lmer(RT ~ 1 + (1|PARTICIPANT),
@@ -145,17 +169,27 @@ extract_eq(fitm_5, use_coefs=TRUE, wrap=TRUE)
 ```
 
 ### Compare models
+
+Likelihood-ratio comparisons ask whether additional terms improve fit enough to justify added complexity. Nested model comparisons should be planned carefully and interpreted alongside effect sizes, uncertainty, diagnostics, and theory.
 ```r
 # compare models
 anova(fitm_0, fitm_1, fitm_2, fitm_3, fitm_4, fitm_5)
 ```
 
 ## Create publication-ready table of results
+
+A formatted table helps readers inspect estimates and uncertainty, but formatting is not validation. Check convergence, residual patterns, influential cases, and the plausibility of the random-effects structure first.
 ```r
 sjPlot::tab_model(fitm_0, fitm_5)
 ```
 
 ## Create publication-ready figure of results
+
+Predicted-value plots translate coefficients back to the outcome scale. Include axis labels, units, uncertainty intervals, and a caption that identifies which variables are held constant.
 ```r
 sjPlot::plot_model(fitm_5, type="pred")
 ```
+
+## Takeaways
+
+Choose the level of analysis to match the data-generating structure. Aggregated regression is useful for orientation, while multilevel modeling preserves trial-level variation and participant clustering. In either case, preprocessing decisions and diagnostics are part of the result—not optional steps hidden behind the final table.

@@ -10,6 +10,8 @@ APIs make the world go round. From airlines, to your groceries, APIs are charged
 
 This example will demonstrate how to interact with a set of APIs that cover a range of possible use cases (e.g., paginated and non-paginated returns, authentication).
 
+Conceptually, an API interaction has four steps: construct a request, send it to an endpoint, check the response, and parse the returned data. Production code should also record parameters and handle timeouts, unsuccessful status codes, pagination, and schema changes.
+
 ::: {.callout-warning title="Be mindful of limits"}
 When connecting to APIs for data, be mindful of the frequency of requests you make. With overuse, depending on the API, you may be throttled, blocked, or limited for a period of time. Check API documentation for posted limits (e.g., 1000 requests per month).
 :::
@@ -24,14 +26,20 @@ Below is a list of public APIs you may consider for your learning:
 
 For this learning exercise, we will work with an API that generates random data. We will get 10 records of faux user records.
 
+Random data are convenient for practicing request and parsing logic because they contain no real personal information. They are not suitable for substantive conclusions, and repeated calls will not return the same records.
+
 https://random-data-api.com/api/internet_stuff/random_internet_stuff
 
 ### Custom function to call API and return data frame
+
+Wrapping the request in a function separates endpoint-specific logic from iteration. A stronger production version would validate the response before converting it to a data frame.
 ```r
 call_api <- function(api) {
 return(as.data.frame(jsonlite::read_json(api)))
 }
 ```
+
+The loop stores each response in a list and combines the records only after all requests finish. Growing a data frame row by row would be slower and harder to recover if one request failed.
 
 ```r
 library(tidyverse)
@@ -49,3 +57,9 @@ library(knitr)
 library(kableExtra)
 knitr::kable(results_df)# %>% kableExtra::kable_minimal(.)
 ```
+
+The final table is also a schema check. Confirm that field names and types match expectations before downstream analysis, because APIs may add, remove, or rename fields.
+
+## Takeaways
+
+Treat API access as data acquisition, not a magical import step. Save request parameters, respect rate limits, check responses, preserve a raw snapshot when permitted, and write parsing code that fails visibly when the schema changes.
